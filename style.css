@@ -55,9 +55,9 @@ body {
 }
 
 .rounded-rectangle {
-  border: 1px dashed black;
+  border: 2px dashed black;
   padding: 40px;
-  border-radius: 70px;
+  border-radius: 150px;
   text-align: center;
 }
 
