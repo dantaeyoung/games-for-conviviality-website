@@ -5,9 +5,11 @@ body {
   font-weight: 400;
   font-style: normal;
   margin: 0px;
+  background-color: rgb(230,300,300)
 }
 
 #bodycontainer {
+  background-color: white;
 	max-width: 600px;
 	height: 100%;
 	min-height: 100vh;
