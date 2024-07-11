@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body id="test">
 
     <h1>AprilTag Example</h1>
 
@@ -77,20 +77,38 @@ const tagManager = new TagManager();
 
 
 //make an new tag
-var tag103 = new Tag(103);
+var tag7 = new Tag(7);
 
 // do stuff when it's visible
-tag103.onShow(() => {
-    console.log("Tag 103 is now visible!");
+tag7.onShow(() => {
+    console.log("Tag 7 is now visible!");
 });
 
 // do stuff when it's hidden
-tag103.onHide(() => {
-    console.log("Tag 103 is now hidden!!");
+tag7.onHide(() => {
+    console.log("Tag 7 is now hidden!!");
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag103);
+tagManager.addTag(tag7);
+
+
+//make an new tag
+var tag13 = new Tag(13);
+
+// do stuff when it's visible
+tag13.onShow(() => {
+        document.getElementById('test').style.setProperty("background-color", "pink");
+});
+
+
+// do stuff when it's hidden
+tag13.onHide(() => {
+    document.getElementById('test').style.setProperty("background-color", "blue");
+});
+
+// add this tag to the system that manages all tags
+tagManager.addTag(tag13);
 
 
 
