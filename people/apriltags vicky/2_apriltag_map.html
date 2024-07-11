@@ -110,7 +110,6 @@ tag103.onShow(() => {
 
     var img = document.getElementById("map_underlay");
     img.style.setProperty("opacity", 0.8);
-
     console.log("Tag 103 is now visible");
 });
 
@@ -118,7 +117,9 @@ tag103.onShow(() => {
 tag103.onHide(() => {
     var img = document.getElementById("map_underlay");
     img.style.setProperty("opacity", 0);
-
+    document.getElementById("body") 
+    body.style.setProperty ('background color', blue)
+  
     console.log("Tag 103 is now hidden");
 });
 
