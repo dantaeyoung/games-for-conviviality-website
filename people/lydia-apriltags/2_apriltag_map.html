@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+
+    .buttons {
+      margin: 10px 0px;
+    }
+
+    .images {
+      height: 500px;
+      position: relative;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+    }
+
+    #webcam-container {
+        position: absolute;
+        top: 30px;
+        left: 5px;
+    }
+
+    #toggle-webcam {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="container">
+
+  <h3>AprilTag Map</h3>
+
+  <p>This is a working example using AprilTag to hide/show map overlays! This is a variant of the 'map.html' file in the 'javascript challenges' folder.</p>
+  <p>Click on the 'Toggle Webcam' button to hide/show the webcam for testing purposes.</p>
+
+    <h3>Challenge 1:</h3>
+    <p>Add two more tags in order to activate/disable all four map layers.</p>
+
+    <h3>Challenge 2:</h3>
+    <p>See if you can change the behavior of the tags so that when tags are NOT VISIBLE, the map layers appear.</p>
+
+  <div class="images">
+    <img id="map_underlay" src="images/map_underlay.png" />
+    <img id="map_racial" src="images/map_racial.png" />
+    <img id="map_dots" src="images/map_dots.png" />
+    <img id="map_rectangle" src="images/map_rectangle.png" />
+  </div>
+
+
+</div>
+
+
+
+
+<div id="toggle-webcam"><button onclick="toggleWebcamContainer()">Toggle Webcam</button></div>
+<div id="webcam-container" style="display:none;">
+    <video id="webcam_canvas" playsinline autoplay style="display:none"></video>
+    <canvas id="out_canvas"></canvas>
+</div>
+
+</body>
+
+<script src="apriltagjs/start_video.js" async></script>
+<script src="apriltagjs/on_tag_logic.js"></script>
+<script type="module" src="apriltagjs/video_process.js" async></script>
+
+<script>
+
+// create a tagManager
+const tagManager = new TagManager();
+
+function toggleWebcamContainer() {
+    var container = document.getElementById('webcam-container');
+    if (container.style.display === 'none') {
+        container.style.display = 'block';
+    } else {
+        container.style.display = 'none';
+    }
+}
+//////////////////
+/// CHANGE CODE BELOW
+//////////////////
+//////////////////
+//////////////////
+//////////////////
+//////////////////
+
+
+
+
+
+
+
+//make an new tag
+var tag103 = new Tag(103);
+
+// do stuff when it's visible
+tag103.onShow(() => {
+
+    var img = document.getElementById("map_underlay");
+    img.style.setProperty("opacity", 0.8);
+
+    console.log("Tag 103 is now visible");
+});
+
+// do stuff when it's hidden
+tag103.onHide(() => {
+    var img = document.getElementById("map_underlay");
+    img.style.setProperty("opacity", 0);
+
+    console.log("Tag 103 is now hidden");
+});
+
+// add this tag to the system that manages all tags
+tagManager.addTag(tag103);
+
+
+
+
+
+//make an new tag
+var tag101 = new Tag(101);
+
+// do stuff when it's visible
+tag101.onShow(() => {
+    var img = document.getElementById("map_racial");
+    img.style.setProperty("opacity", 0.9);
+
+    console.log("Tag 101 is now visible");
+});
+
+// do stuff when it's hidden
+tag101.onHide(() => {
+    var img = document.getElementById("map_racial");
+    img.style.setProperty("opacity", 0);
+
+    console.log("Tag 101 is now hidden");
+});
+
+// add this tag to the system that manages all tags
+tagManager.addTag(tag101);
+
+
+
+
+
+
+
+
+//////////////////
+//////////////////
+//////////////////
+//////////////////
+///CHANGE CODE ABOVE
+//////////////////
+
+function processDetections(tags) {
+    tagManager.updateTags(tags);
+}
+
+
+
+</script>
+
+</body>
+</html>
