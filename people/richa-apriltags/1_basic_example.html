@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body id="body">
 
     <h1>AprilTag Example</h1>
 
@@ -77,20 +77,56 @@ const tagManager = new TagManager();
 
 
 //make an new tag
-var tag103 = new Tag(103);
+var tag5 = new Tag(5);
 
 // do stuff when it's visible
-tag103.onShow(() => {
-    console.log("Tag 103 is now visible!");
+tag5.onShow(() => {
+    console.log("Tag 5 is now visible!");
 });
 
 // do stuff when it's hidden
-tag103.onHide(() => {
-    console.log("Tag 103 is now hidden!!");
+tag5.onHide(() => {
+    console.log("Tag 5 is now hidden!!");
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag103);
+tagManager.addTag(tag5);
+
+//make an new tag
+var tag6 = new Tag(6);
+
+// do stuff when it's visible
+tag6.onShow(() => {
+    console.log("Tag 6 is now visible!");
+    //alert("Tag 6 is now visible!!");
+});
+
+// do stuff when it's hidden
+tag6.onHide(() => {
+    console.log("Tag 6 is now hidden!!");
+    //alert("Tag 6 is now hidden!!");
+});
+// add this tag to the system that manages all tags
+tagManager.addTag(tag6);
+
+//make an new tag
+var tag7 = new Tag(7);
+
+// do stuff when it's visible
+tag7.onShow(() => {
+    console.log("Tag 7 is now visible!");
+    document.getElementById('body').style.setProperty('background-color', 'pink');
+});
+
+// do stuff when it's hidden
+tag7.onHide(() => {
+    console.log("Tag 7 is now hidden!!");
+    document.getElementById('body').style.setProperty('background-color', 'white');
+
+});
+
+// add this tag to the system that manages all tags
+tagManager.addTag(tag7);
 
 
 
@@ -110,6 +146,14 @@ function processDetections(tags) {
     tagManager.updateTags(tags);
 }
 
+function changeHTML() {
+
+// this changes the 'innerText', or the text inside of the element.
+
+
+//  document.getElementById('description').style.setProperty("color", "blue");
+//  document.getElementById('description').style.setProperty("background-color", "pink");
+}
 
 
 </script>
