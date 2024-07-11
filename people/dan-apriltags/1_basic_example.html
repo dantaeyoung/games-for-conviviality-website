@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body id="body">
 
     <h1>AprilTag Example</h1>
 
@@ -41,7 +41,7 @@
     <p>Choose another tag and note its ID. Using the following syntax, change the CSS properties of an HTML element. 
     </p>
     <p>Hint 1: <span class="hint">Check out #13 in 'javascript challenges'</span></p>
-    <p>Hint 2: <span class="hint">Try <code>document.getElementById('body').style.setProperty('background-color', 'light-blue');</code></span></p>
+    <p>Hint 2: <span class="hint">Try <code>document.getElementById('body').style.setProperty('background-color', 'blue');</code></span></p>
 <div id="container">
 
 
@@ -77,20 +77,20 @@ const tagManager = new TagManager();
 
 
 //make an new tag
-var tag103 = new Tag(103);
+var tag5 = new Tag(5);
 
 // do stuff when it's visible
-tag103.onShow(() => {
-    console.log("Tag 103 is now visible!");
+tag5.onShow(() => {
+    console.log("Tag 5 is now visible!");
 });
 
 // do stuff when it's hidden
-tag103.onHide(() => {
-    console.log("Tag 103 is now hidden!!");
+tag5.onHide(() => {
+    console.log("Tag 5 is now hidden!!");
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag103);
+tagManager.addTag(tag5);
 
 
 
