@@ -6,3 +6,8 @@
   background-color: yellow;
 }
 
+.hint:click {
+    text-decoration: aqua;
+    background-color: aliceblue;
+    text-transform: uppercase;
+}
