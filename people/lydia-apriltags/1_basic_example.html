@@ -99,12 +99,14 @@ var tag13 = new Tag(13);
 // do stuff when it's visible
 tag13.onShow(() => {
         document.getElementById('test').style.setProperty("background-color", "pink");
+        document.getElementById('test').style.setProperty("color", "black");
 });
 
 
 // do stuff when it's hidden
 tag13.onHide(() => {
     document.getElementById('test').style.setProperty("background-color", "blue");
+    document.getElementById('test').style.setProperty("color", "white");
 });
 
 // add this tag to the system that manages all tags
