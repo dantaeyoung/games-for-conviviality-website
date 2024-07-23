@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+
+    .buttons {
+      margin: 10px 0px;
+    }
+
+    .images {
+      height: 500px;
+      position: relative;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+    }
+
+    #webcam-container {
+        position: absolute;
+        top: 30px;
+        left: 5px;
+    }
+
+    #toggle-webcam {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+
+        .action-card {
+        display: none;
+        font-size: 2em;
+        width: 500px;
+        padding: 30px;
+        margin: 30px;
+        border: 3px dashed #666;
+        background-color: #c0f0f0;
+      }
+
+      .action-card .title {
+        font-size: 1.2em;
+        font-family: "Playwrite NG Modern", cursive;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+  </style>
+</head>
+
+<body>
+
+<div id="container">
+
+  <h3>AprilTag Scenario Cards</h3>
+
+  <p>This is a working example using AprilTag to pick a scenario card!</p>
+  <p>Click on the 'Toggle Webcam' button to hide/show the webcam for testing purposes.</p>
+
+    <div id="scenario-cards">
+
+          <div class="scenario-card" id="scenario-card-1">
+        <div class="title">SCENARIO CARD 1: Advance to Go</div>
+        <div class="explanation">Collect $200 as you pass GO.</div>
+      </div>
+
+      <div class="scenario-card" id="scenario-card-2">
+        <div class="title">SCENARIO CARD 2: Pay Hospital Fees</div>
+        <div class="explanation">Pay $100.</div>
+      </div>
+
+      <div class="scenario-card" id="scenario-card-3">
+        <div class="title">SCENARIO CARD 3: Get Out of Jail Free</div>
+        <div class="explanation">
+          This card may be kept until needed, or sold/traded.
+        </div>
+      </div>
+
+      <div class="scenario-card" id="scenario-card-4">
+        <div class="title">SCENARIO CARD 4: Bank Error in Your Favor</div>
+        <div class="explanation">Collect $200.</div>
+      </div>
+
+      <div class="scenario-card" id="scenario-card-5">
+        <div class="title">SCENARIO CARD 5: Go to Jail</div>
+        <div class="explanation">
+          Go directly to Jail. Do not pass GO, do not collect $200.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scenario-card" id="scenario-card-6">
+    <div class="title">SCENARIO CARD 6: Bank Error in Your Favor</div>
+    <div class="explanation">Collect $200.</div>
+  </div>
+
+  <div class="scenario-card" id="scenario-card-7">
+    <div class="title">SCENARIO CARD 7: Bank Error in Your Favor</div>
+    <div class="explanation">Collect $200.</div>
+  </div>
+
+  <div class="scenario-card" id="scenario-card-8">
+    <div class="title">SCENARIO CARD 8: Bank Error in Your Favor</div>
+    <div class="explanation">Collect $200.</div>
+  </div>
+
+  <div class="scenario-card" id="scenario-card-9">
+    <div class="title">SCENARIO CARD 9: Bank Error in Your Favor</div>
+    <div class="explanation">Collect $200.</div>
+  </div>
+
+  <div class="scenario-card" id="scenario-card-10">
+    <div class="title">SCENARIO CARD 10: Bank Error in Your Favor</div>
+    <div class="explanation">Collect $200.</div>
+  </div>
+
+  <div class="scenario-card" id="scenario-card-11">
+    <div class="title">SCENARIO CARD 11: Bank Error in Your Favor</div>
+    <div class="explanation">Collect $200.</div>
+  </div>
+
+  <div class="scenario-card" id="scenario-card-12">
+    <div class="title">SCENARIO CARD 4: Bank Error in Your Favor</div>
+    <div class="explanation">Collect $200.</div>
+  </div>
+
+  <div class="scenario-card" id="scenario-card-13">
+    <div class="title">SCENARIO CARD 4: Bank Error in Your Favor</div>
+    <div class="explanation">Collect $200.</div>
+  </div>
+
+  <div class="scenario-card" id="scenario-card-14">
+    <div class="title">SCENARIO CARD 4: Bank Error in Your Favor</div>
+    <div class="explanation">Collect $200.</div>
+  </div>
+
+  <div class="scenario-card" id="scenario-card-15">
+    <div class="title">SCENARIO CARD 4: Bank Error in Your Favor</div>
+    <div class="explanation">Collect $200.</div>
+  </div>
+
+  <div class="scenario-card" id="scenario-card-16">
+    <div class="title">SCENARIO CARD 4: Bank Error in Your Favor</div>
+    <div class="explanation">Collect $200.</div>
+  </div>
+
+</div>
+
+
+
+
+<div id="toggle-webcam"><button onclick="toggleWebcamContainer()">Toggle Webcam</button></div>
+<div id="webcam-container" style="display:none;">
+    <video id="webcam_canvas" playsinline autoplay style="display:none"></video>
+    <canvas id="out_canvas"></canvas>
+</div>
+
+</body>
+
+<script src="apriltagjs/start_video.js" async></script>
+<script src="apriltagjs/on_tag_logic.js"></script>
+<script type="module" src="apriltagjs/video_process.js" async></script>
+
+<script>
+
+// create a tagManager
+const tagManager = new TagManager();
+
+function toggleWebcamContainer() {
+    var container = document.getElementById('webcam-container');
+    if (container.style.display === 'none') {
+        container.style.display = 'block';
+    } else {
+        container.style.display = 'none';
+    }
+}
+//////////////////
+/// CHANGE CODE BELOW
+//////////////////
+//////////////////
+//////////////////
+//////////////////
+//////////////////
+
+
+
+
+
+
+
+//make an new tag
+var tag103 = new Tag(103);
+
+// do stuff when it's visible
+tag103.onShow(() => {
+
+      var actionCards = document.getElementsByClassName("action-card");
+      var randomIndex = Math.floor(Math.random() * actionCards.length);
+
+      // Hide all action cards first
+      Array.from(actionCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked action card
+      actionCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag103.onHide(() => {
+
+    var actionCards = document.getElementsByClassName("action-card");
+
+    // Hide all action cards
+    Array.from(actionCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+
+
+});
+
+// add this tag to the system that manages all tags
+tagManager.addTag(tag103);
+
+
+
+
+
+
+
+
+
+
+//////////////////
+//////////////////
+//////////////////
+//////////////////
+///CHANGE CODE ABOVE
+//////////////////
+
+function processDetections(tags) {
+    tagManager.updateTags(tags);
+}
+
+
+
+</script>
+
+</body>
+</html>
