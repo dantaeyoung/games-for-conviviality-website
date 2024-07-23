@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 body {
-  font-family: "EB Garamond", serif;
+  font-family: "Helvetica", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  margin: 0px;
+  margin: 20px;
   background-color: rgb(230,300,300)
 }
 
 #bodycontainer {
   background-color: white;
-	max-width: 600px;
+	max-width: 1000px;
 	height: 100%;
 	min-height: 100vh;
   margin: 50px auto;
@@ -73,6 +73,33 @@ body {
   text-align: left;
 }
 
+.rolecard {
+  max-width: 500px;
+  border: 2px dashed black;
+  padding: 40px;
+  border-radius: 150px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.element {
+  max-width: 500px;
+  border: 2px solid rgb(255, 0, 0);
+  padding: 40px;
+  border-radius: 150px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.action {
+  max-width: 500px;
+  border: 2px solid rgb(26, 26, 26);
+  padding: 40px;
+  border-radius: 100px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
 .buttons {
   margin: 10px 0px;
 }
@@ -101,21 +128,3 @@ img {
     top: 5px;
     right: 5px;
 }
-
-    .action-card {
-    display: none;
-    font-size: 2em;
-    width: 500px;
-    padding: 30px;
-    margin: 30px;
-    border: 3px dashed #666;
-    background-color: #c0f0f0;
-  }
-
-  .action-card .title {
-    font-size: 1.2em;
-    font-family: "Playwrite NG Modern", cursive;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }

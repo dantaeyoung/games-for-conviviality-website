@@ -2,43 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <style>
-
-    .buttons {
-      margin: 10px 0px;
-    }
-
-    .images {
-      height: 500px;
-      position: relative;
-    }
-
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      opacity: 0;
-    }
-
-    #webcam-container {
-        position: absolute;
-        top: 5px;
-        left: 5px;
-    }
-
-    #toggle-webcam {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-    }
-  </style>
+  <link rel="stylesheet" href="style_game.css">
 </head>
 
 <body>
     <h1>Crisis Rises!</h1>
-    <p>New York City is on the verge of a <strong>climate crisis</strong> , with rising sea levels threatening its very existence. </p>
-    <p>Can you, the leaders of agencies, build enough resilience to save the city from drowning in due time?</p>
+    <div>
+        <p>New York City is on the verge of a <strong>climate crisis</strong> , with rising sea levels threatening its very existence. </p>
+        <p>Can you, the leaders of agencies, build enough resilience to save the city from drowning in due time?</p>
+    </div>
+    <div class="action">
+        <h2>Action</h2>
+        <p>Action proceed clockwise.</p>
+        <p>Each player has <strong>2 actions per turn</strong>, with one action in their neighborhood and the other outside their neighbourhood</p>
+        <p>Each player's role card mentions special abilities and possible actions.</p>
+        <h3>Possible actions are:</h3>
+        <p>Build one element (If conditions for building chosen element is not currently met, then you cannot build the chosen element.) </p>
+        <p>Demolish one element.</p>
+        <p>Swap one built element with another built element (counts as 2 actions).</p>
+        <h3>When the timer runs out:</h3>
+        <p>Stop your current action.</p>
+        <p>Reset the timer.</p>
+        <p>Draw from the flood deck and roll the dice; then FINISH your incomplete action.</p>
+    </div>
+
+    <h2>Element Functions</h2>
+    <div class="element">
+        <h3>Green Infrastructure</h3>
+        <p>- Green Infrastructure abosorbs water. </p>
+        <p>- The number of Green Infrastructure in a flood zone determines your protected numbers when rolling after drawing from the Flood Deck (e.g., 3 G.I. means protected numbers are 1, 2, and 3)</p>
+    </div>
+
+    <div class="element">
+        <h3>Emergency Services</h3>
+        <p>- Reclaims flooded land. </p>
+        <p>- Building an emergency service allows for reclaiming the flooded region to start building again</p>
+    </div>
+
+    <div class="element">
+        <h3>Wall</h3>
+        <p>- Requires at least 2 Green Infrastructure in the neighborhood to build. </p>
+        <p>- Stops water.</p>
+        <p>- A continuous wall can permanently prevent flooding inland. Each flood removes 1 wall unit before the wall is completed.</p>
+    </div>
+
+    <div class="element">
+        <h3>Housing</h3>
+        <p>- Provides a population with shelter. </p>
+    </div>
+
+    <div class="element">
+        <h3>Commercial </h3>
+        <p>- Requires at least 2 housing units in the neighborhood to build. </p>
+        <p>- Generates revenue: collect 1 token per commercial unit.</p>
+    </div>
+
+    <h2>Role Cards</h2>
+    <div class="rolecard">
+        <h3>Urban Designer</h3>
+        <p>- Can build anything. </p>
+        <p>- Can build emergency services and Green Infrastructure at half price.</p>
+    </div>
+
+    <div class="rolecard">
+        <h3>Parks Department</h3>
+        <p>- Can only build G.I and wall. </p>
+        <p>- Can build one free Park per turn.</p>
+    </div>
+
+    <div class="rolecard">
+        <h3>Private Developer</h3>
+        <p>- Can build only Housing, Commercial and wall. </p>
+        <p>- Can collect twice the tokens (allotted to the player per turn, collect the tokens directly from the token bank).</p>
+    </div>
+
+    <div class="rolecard">
+        <h3>Construction team</h3>
+        <p>- Can build anything. </p>
+        <p>- Can build Housing and Commercial at Half price.</p>
+    </div>
+
+    <div class="rolecard">
+        <h3>EDC</h3>
+        <p>- Can only build wall. </p>
+        <p>- Can give up to 5 tokens to any player as an action.</p>
+    </div>
+
+    <div class="rolecard">
+        <h3>Department of Sanitation</h3>
+        <p>- Can build public services and wall. </p>
+        <p>- Can swap a flooded zone to an unflooded zone on the map as an action.</p>
+    </div>
+
+    <div class="rolecard">
+        <h3>Department of City Planning</h3>
+        <p>- Can build anything. </p>
+        <p>- Can give their action to anyone else on the other players turn to do any 1 of the three basic actions.</p>
+    </div>
+
+    <div class="rolecard">
+        <h3>NIMBY Alliance</h3>
+        <p>- Can build only Green Infrastructure and wall. </p>
+        <p>- Can give up their action to veto anyone else's action on the other player's turn.</p>
+    </div>
+
+    <div class="rolecard">
+        <h3>MOCEJ</h3>
+        <p>- Can build only G.I, emergency service and wall. </p>
+        <p>- Can give up their action to ask any player to build an emergency service on their turn. Overwrites other player's action.</p>
+    </div>
 
 <div class="rounded-rectangle"><a href="inspection.html">You are under inspection! Click here!</a></div>
 <div class="rounded-rectangle"><a href="scenario.html">Pick a scenario! Click here!</a></div>
@@ -51,6 +123,18 @@
 
 
 
+<div id="toggle-webcam"><button onclick="toggleWebcamContainer()">Toggle Webcam</button></div>
+<div id="webcam-container" style="display:inside;">
+    <video id="webcam_canvas" playsinline autoplay style="display:inside"></video>
+    <canvas id="out_canvas"></canvas>
+</div>
+
+<div id="toggle-webcam"><button onclick="toggleWebcamContainer()">Toggle Webcam</button></div>
+<div id="webcam-container" style="display:inside;">
+    <video id="webcam_canvas" playsinline autoplay style="display:inside"></video>
+    <canvas id="out_canvas"></canvas>
+</div>
+
 </body>
 
 <script src="apriltags\apriltagjs\start_video.js" async></script>
@@ -58,6 +142,10 @@
 <script type="module" src="apriltags\apriltagjs\video_process.js" async></script>
 
 <script>
+
+// create a tagManager
+const tagManager = new TagManager();
+
 function toggleWebcamContainer() {
     var container = document.getElementById('webcam-container');
     if (container.style.display === 'none') {
@@ -66,5 +154,13 @@ function toggleWebcamContainer() {
         container.style.display = 'none';
     }
 }
+
+function processDetections(tags) {
+    tagManager.updateTags(tags);
+}
+
+
+
 </script>
+
 </html>
