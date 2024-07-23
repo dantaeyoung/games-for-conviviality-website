@@ -50,11 +50,21 @@
 </div>
 
 
+
 </body>
 
 <script src="apriltags\apriltagjs\start_video.js" async></script>
 <script src="apriltags\apriltagjs\on_tag_logic.js"></script>
 <script type="module" src="apriltags\apriltagjs\video_process.js" async></script>
 
-
+<script>
+function toggleWebcamContainer() {
+    var container = document.getElementById('webcam-container');
+    if (container.style.display === 'none') {
+        container.style.display = 'block';
+    } else {
+        container.style.display = 'none';
+    }
+}
+</script>
 </html>
