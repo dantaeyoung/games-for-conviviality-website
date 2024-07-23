@@ -73,9 +73,19 @@ body {
   text-align: left;
 }
 
-.rolecard {
+.rolecardgov {
+  background-color: #4fc3ff;
   max-width: 500px;
-  border: 2px dashed black;
+  border: 2px solid black;
+  padding: 40px;
+  border-radius: 150px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.rolecardnongov {
+  max-width: 500px;
+  border: 2px solid black;
   padding: 40px;
   border-radius: 150px;
   text-align: center;
@@ -110,11 +120,11 @@ body {
 }
 
 img {
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
+  left: 0; */
+  max-height: 100%
+  /* opacity: 0; */
 }
 
 #webcam-container {
@@ -127,4 +137,27 @@ img {
     position: absolute;
     top: 5px;
     right: 5px;
+}
+
+.card_image, .card_back {
+
+  background-color: pink;
+  height: 400px;
+  width: 300px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.card_back {
+  display: none;
+}
+
+.rolecardnongov:hover .card_back {
+  display: block;
+}
+
+
+.rolecardnongov:hover .card_image {
+
+  display: none;
 }
