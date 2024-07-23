@@ -1,15 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <style>
 
-    <meta charset="utf-8">
-    <base target="_blank">
+    .buttons {
+      margin: 10px 0px;
+    }
 
-    <title>Apriltag Example </title>
+    .images {
+      height: 500px;
+      position: relative;
+    }
 
-    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="style.css">
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+    }
 
+    #webcam-container {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+    }
+
+    #toggle-webcam {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+  </style>
 </head>
 
 <body>
@@ -20,22 +43,18 @@
 <div class="rounded-rectangle"><a href="inspection.html">You are under inspection! Click here!</a></div>
 <div class="rounded-rectangle"><a href="scenario.html">Pick a scenario! Click here!</a></div>
 
-<div id="webcam-container">
-    <video id="webcam_canvas" playsinline autoplay style="display:none"></video>
-    <canvas id="out_canvas"></canvas>
-</div>
-
 <div id="toggle-webcam"><button onclick="toggleWebcamContainer()">Toggle Webcam</button></div>
-
-<div id="webcam-container" >
-    <video id="webcam_canvas" playsinline autoplay style="display:none"></video>
+<div id="webcam-container" style="display:inside;">
+    <video id="webcam_canvas" playsinline autoplay style="display:inside"></video>
     <canvas id="out_canvas"></canvas>
 </div>
+
+
+</body>
 
 <script src="apriltags\apriltagjs\start_video.js" async></script>
 <script src="apriltags\apriltagjs\on_tag_logic.js"></script>
 <script type="module" src="apriltags\apriltagjs\video_process.js" async></script>
 
 
-</body>
 </html>
