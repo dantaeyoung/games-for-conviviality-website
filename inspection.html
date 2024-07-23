@@ -440,10 +440,13 @@ const tagManager = new TagManager();
 
 function toggleWebcamContainer() {
     var container = document.getElementById('webcam-container');
-    if (container.style.display === 'none') {
-        container.style.display = 'block';
+    if(container.style.getPropertyValue("opacity") == 1 || container.style.getPropertyValue("opacity") == "") {
+
+        container.style.setProperty("opacity", 0);
+
     } else {
-        container.style.display = 'none';
+        container.style.setProperty("opacity", 1);
+
     }
 }
 //////////////////
@@ -500,137 +503,141 @@ var tag51 = new Tag(50);
 
 // do stuff when it's visible
 tag16.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-1")
+    var actionCards = document.getElementById("action-card-1")
+    actionCards.style.setProperty("display", "block");
+
     console.log("Question 1 (tag16) is now visible");
 });
 
 // do stuff when it's hidden
 tag16.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-1")
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-1")
+    actionCards.style.setProperty("display", "none");
 
     console.log("Question 1 (tag16) is now hidden");
 });
 
 tag17.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-2")
+    var actionCards = document.getElementById("action-card-2")
     console.log("Question 2 (tag17) is now visible");
+    actionCards.style.setProperty("display", "block");
+
 });
 tag17.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-2")
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-2")
+    actionCards.style.setProperty("display", "none");
     console.log("Question 2 (tag17) is now hidden");
 });
 
 tag18.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-3")
+    var actionCards = document.getElementById("action-card-3")
     console.log("Question 3 (tag18) is now visible");
 });
 tag18.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-3")
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-3")
+    actionCards.style.setProperty("display", "none");
     console.log("Question 3 (tag18) is now hidden");
 });
 
 tag19.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-4")
+    var actionCards = document.getElementById("action-card-4")
     console.log("Question 4 (tag19) is now visible");
 });
 tag19.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-4")
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-4")
+    actionCards.style.setProperty("display", "none");
     console.log("Question 4 (tag19) is now hidden");
 });
 
 tag20.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-5")
+    var actionCards = document.getElementById("action-card-5")
     console.log("Question 5 (tag20) is now visible");
 });
 tag20.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-5")
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-5")
+    actionCards.style.setProperty("display", "none");
     console.log("Question 5 (tag20) is now hidden");
 });
 
 tag21.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-6")
+    var actionCards = document.getElementById("action-card-6")
     console.log("Question 6 (tag21) is now visible");
 });
 tag21.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-6")
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-6")
+    actionCards.style.setProperty("display", "none");
     console.log("Question 6 (tag21) is now hidden");
 });
 
 tag22.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-7")
+    var actionCards = document.getElementById("action-card-7")
     console.log("Question 7 (tag22) is now visible");
 });
 tag22.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-7")
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-7")
+    actionCards.style.setProperty("display", "none");
     console.log("Question 7 (tag22) is now hidden");
 });
 
 tag23.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-8")
+    var actionCards = document.getElementById("action-card-8")
     console.log("Question 8 (tag23) is now visible");
 });
 tag23.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-8")
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-8")
+    actionCards.style.setProperty("display", "none");
     console.log("Question 8 (tag23) is now hidden");
 });
 
 tag24.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-9")
+    var actionCards = document.getElementById("action-card-9")
     console.log("Question 9 (tag24) is now visible");
 });
 tag24.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-9")
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-9")
+    actionCards.style.setProperty("display", "none");
     console.log("Question 9 (tag24) is now hidden");
 });
 // Tag 25
 tag25.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-10");
+    var actionCards = document.getElementById("action-card-10");
     console.log("Question 10 (tag25) is now visible");
 });
 tag25.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-10");
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-10");
+    actionCards.style.setProperty("display", "none");
     console.log("Question 10 (tag25) is now hidden");
 });
 
 // Tag 26
 tag26.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-11");
+    var actionCards = document.getElementById("action-card-11");
     console.log("Question 11 (tag26) is now visible");
 });
 tag26.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-11");
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-11");
+    actionCards.style.setProperty("display", "none");
     console.log("Question 11 (tag26) is now hidden");
 });
 
 // Tag 27
 tag27.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-12");
+    var actionCards = document.getElementById("action-card-12");
     console.log("Question 12 (tag27) is now visible");
 });
 tag27.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-12");
-    actionCards.style.setProperty("opacity", 0);
+    var actionCards = document.getElementById("action-card-12");
+    actionCards.style.setProperty("display", "none");
     console.log("Question 12 (tag27) is now hidden");
 });
 
 // Tag 28
 tag28.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-12");
+    var actionCards = document.getElementById("action-card-12");
     console.log("Question 12 (tag28) is now visible");
 });
 tag28.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-12");
+    var actionCards = document.getElementById("action-card-12");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -639,11 +646,11 @@ tag28.onHide(() => {
 
 // Tag 29
 tag29.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-13");
+    var actionCards = document.getElementById("action-card-13");
     console.log("Question 13 (tag29) is now visible");
 });
 tag29.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-13");
+    var actionCards = document.getElementById("action-card-13");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -652,11 +659,11 @@ tag29.onHide(() => {
 
 // Tag 30
 tag30.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-14");
+    var actionCards = document.getElementById("action-card-14");
     console.log("Question 14 (tag30) is now visible");
 });
 tag30.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-14");
+    var actionCards = document.getElementById("action-card-14");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -665,11 +672,11 @@ tag30.onHide(() => {
 
 // Tag 31
 tag31.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-15");
+    var actionCards = document.getElementById("action-card-15");
     console.log("Question 15 (tag31) is now visible");
 });
 tag31.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-15");
+    var actionCards = document.getElementById("action-card-15");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -678,11 +685,11 @@ tag31.onHide(() => {
 
 // Tag 32
 tag32.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-16");
+    var actionCards = document.getElementById("action-card-16");
     console.log("Question 16 (tag32) is now visible");
 });
 tag32.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-16");
+    var actionCards = document.getElementById("action-card-16");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -691,11 +698,11 @@ tag32.onHide(() => {
 
 // Tag 33
 tag33.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-17");
+    var actionCards = document.getElementById("action-card-17");
     console.log("Question 17 (tag33) is now visible");
 });
 tag33.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-17");
+    var actionCards = document.getElementById("action-card-17");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -704,11 +711,11 @@ tag33.onHide(() => {
 
 // Tag 34
 tag34.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-18");
+    var actionCards = document.getElementById("action-card-18");
     console.log("Question 18 (tag34) is now visible");
 });
 tag34.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-18");
+    var actionCards = document.getElementById("action-card-18");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -717,11 +724,11 @@ tag34.onHide(() => {
 
 // Tag 35
 tag35.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-19");
+    var actionCards = document.getElementById("action-card-19");
     console.log("Question 19 (tag35) is now visible");
 });
 tag35.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-19");
+    var actionCards = document.getElementById("action-card-19");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -730,11 +737,11 @@ tag35.onHide(() => {
 
 // Tag 36
 tag36.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-20");
+    var actionCards = document.getElementById("action-card-20");
     console.log("Question 20 (tag36) is now visible");
 });
 tag36.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-20");
+    var actionCards = document.getElementById("action-card-20");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -743,11 +750,11 @@ tag36.onHide(() => {
 
 // Tag 37
 tag37.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-21");
+    var actionCards = document.getElementById("action-card-21");
     console.log("Question 21 (tag37) is now visible");
 });
 tag37.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-21");
+    var actionCards = document.getElementById("action-card-21");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -756,11 +763,11 @@ tag37.onHide(() => {
 
 // Tag 38
 tag38.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-22");
+    var actionCards = document.getElementById("action-card-22");
     console.log("Question 22 (tag38) is now visible");
 });
 tag38.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-22");
+    var actionCards = document.getElementById("action-card-22");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -769,11 +776,11 @@ tag38.onHide(() => {
 
 // Tag 39
 tag39.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-23");
+    var actionCards = document.getElementById("action-card-23");
     console.log("Question 23 (tag39) is now visible");
 });
 tag39.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-23");
+    var actionCards = document.getElementById("action-card-23");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -782,11 +789,11 @@ tag39.onHide(() => {
 
 // Tag 40
 tag40.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-24");
+    var actionCards = document.getElementById("action-card-24");
     console.log("Question 24 (tag40) is now visible");
 });
 tag40.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-24");
+    var actionCards = document.getElementById("action-card-24");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -795,11 +802,11 @@ tag40.onHide(() => {
 
 // Tag 41
 tag41.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-25");
+    var actionCards = document.getElementById("action-card-25");
     console.log("Question 25 (tag41) is now visible");
 });
 tag41.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-25");
+    var actionCards = document.getElementById("action-card-25");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -808,11 +815,11 @@ tag41.onHide(() => {
 
 // Tag 42
 tag42.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-26");
+    var actionCards = document.getElementById("action-card-26");
     console.log("Question 26 (tag42) is now visible");
 });
 tag42.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-26");
+    var actionCards = document.getElementById("action-card-26");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -821,11 +828,11 @@ tag42.onHide(() => {
 
 // Tag 43
 tag43.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-27");
+    var actionCards = document.getElementById("action-card-27");
     console.log("Question 27 (tag43) is now visible");
 });
 tag43.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-27");
+    var actionCards = document.getElementById("action-card-27");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -834,11 +841,11 @@ tag43.onHide(() => {
 
 // Tag 44
 tag44.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-28");
+    var actionCards = document.getElementById("action-card-28");
     console.log("Question 28 (tag44) is now visible");
 });
 tag44.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-28");
+    var actionCards = document.getElementById("action-card-28");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -847,11 +854,11 @@ tag44.onHide(() => {
 
 // Tag 45
 tag45.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-29");
+    var actionCards = document.getElementById("action-card-29");
     console.log("Question 29 (tag45) is now visible");
 });
 tag45.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-29");
+    var actionCards = document.getElementById("action-card-29");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -860,11 +867,11 @@ tag45.onHide(() => {
 
 // Tag 46
 tag46.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-30");
+    var actionCards = document.getElementById("action-card-30");
     console.log("Question 30 (tag46) is now visible");
 });
 tag46.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-30");
+    var actionCards = document.getElementById("action-card-30");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -873,11 +880,11 @@ tag46.onHide(() => {
 
 // Tag 47
 tag47.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-31");
+    var actionCards = document.getElementById("action-card-31");
     console.log("Question 31 (tag47) is now visible");
 });
 tag47.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-31");
+    var actionCards = document.getElementById("action-card-31");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -886,11 +893,11 @@ tag47.onHide(() => {
 
 // Tag 48
 tag48.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-32");
+    var actionCards = document.getElementById("action-card-32");
     console.log("Question 32 (tag48) is now visible");
 });
 tag48.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-32");
+    var actionCards = document.getElementById("action-card-32");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -899,11 +906,11 @@ tag48.onHide(() => {
 
 // Tag 49
 tag49.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-33");
+    var actionCards = document.getElementById("action-card-33");
     console.log("Question 33 (tag49) is now visible");
 });
 tag49.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-33");
+    var actionCards = document.getElementById("action-card-33");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -912,11 +919,11 @@ tag49.onHide(() => {
 
 // Tag 50
 tag50.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-34");
+    var actionCards = document.getElementById("action-card-34");
     console.log("Question 34 (tag50) is now visible");
 });
 tag50.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-34");
+    var actionCards = document.getElementById("action-card-34");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
@@ -925,11 +932,11 @@ tag50.onHide(() => {
 
 // Tag 51
 tag51.onShow(() => {
-    var actionCards = document.getElementsByClassName("action-card-35");
+    var actionCards = document.getElementById("action-card-35");
     console.log("Question 35 (tag51) is now visible");
 });
 tag51.onHide(() => {
-    var actionCards = document.getElementsByClassName("action-card-35");
+    var actionCards = document.getElementById("action-card-35");
     for (let i = 0; i < actionCards.length; i++) {
         actionCards[i].style.setProperty("opacity", 0);
     }
