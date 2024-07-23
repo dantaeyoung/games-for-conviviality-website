@@ -100,22 +100,6 @@
 </div>
 
 
-
-
-<div id="toggle-webcam"><button onclick="toggleWebcamContainer()">Toggle Webcam</button></div>
-<div id="webcam-container" style="display:none;">
-    <video id="webcam_canvas" playsinline autoplay style="display:none"></video>
-    <canvas id="out_canvas"></canvas>
-</div>
-
-</body>
-
-<script src="apriltagjs/start_video.js" async></script>
-<script src="apriltagjs/on_tag_logic.js"></script>
-<script type="module" src="apriltagjs/video_process.js" async></script>
-
-<script>
-
 // create a tagManager
 const tagManager = new TagManager();
 
@@ -142,12 +126,12 @@ function toggleWebcamContainer() {
 
 
 //make an new tag
-var tag103 = new Tag(103);
+var tag16 = new Tag(16);
 
 // do stuff when it's visible
-tag103.onShow(() => {
+tag16.onShow(() => {
 
-      var actionCards = document.getElementsByClassName("action-card");
+      var actionCards = document.getElementsByClassName("action-card-1");
       var randomIndex = Math.floor(Math.random() * actionCards.length);
 
       // Hide all action cards first
@@ -161,7 +145,7 @@ tag103.onShow(() => {
 });
 
 // do stuff when it's hidden
-tag103.onHide(() => {
+tag16.onHide(() => {
 
     var actionCards = document.getElementsByClassName("action-card");
 
@@ -175,7 +159,7 @@ tag103.onHide(() => {
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag103);
+tagManager.addTag(tag16);
 
 
 
