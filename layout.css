@@ -49,8 +49,8 @@ iframe {
   height: 100%;
   border: none; /* Remove the default border */
   overflow: hidden; /* Hide any overflow content */
-  transform: scale(0.9); /* Scale content to fit */
-  transform-origin: top right; /* Adjust origin if needed */
+  transform: scale(0.85); /* Scale content to fit */
+  transform-origin: top center; /* Adjust origin if needed */
 }
 
 .sidebar-left {
