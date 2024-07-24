@@ -32,20 +32,19 @@
       right: 5px;
     }
   
-    /* Ensure the scenario-card is hidden initially */
     .scenario-card {
       display: none; /* Initially hide the card */
       width: 300px; /* 4:3 aspect ratio width */
       height: 225px; /* 4:3 aspect ratio height */
       padding: 20px;
       margin: 20px auto; /* Center card horizontally */
-      border-radius: 20px; /* Rounded corners */
-      border: 2px solid #666; /* Solid border for a cleaner look */
-      background: linear-gradient(145deg, #333, #000); /* Gradient background for a modern look */
-      color: #fff; /* White text for contrast */
+      border-radius: 15px; /* Rounded corners */
+      border: 2px solid #ffeb3b; /* Yellow border for emphasis */
+      background-color: #000; /* Black background for strong contrast */
+      color: #fff; /* White text for readability */
       font-family: Helvetica, Arial, sans-serif; /* Helvetica font */
       box-sizing: border-box; /* Ensures padding and border are included in the total width and height */
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Deeper shadow for a more pronounced effect */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */
       position: relative; /* To ensure proper placement of internal elements */
     }
   
@@ -56,17 +55,22 @@
     .scenario-card .title {
       font-size: 1.5em; /* Larger font size for emphasis */
       font-weight: 700; /* Bold title for better hierarchy */
-      margin-bottom: 15px; /* Increased space below title for better readability */
+      margin-bottom: 15px; /* Space below title */
       line-height: 1.2; /* Improved line height for better text spacing */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text shadow for better readability */
+      color: #ffeb3b; /* Bright yellow for the title */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Subtle text shadow for readability */
+      border-bottom: 3px solid #ffeb3b; /* Yellow underline for emphasis */
+      padding-bottom: 5px; /* Space between text and underline */
     }
   
     .scenario-card .content {
       font-size: 1em; /* Regular font size for content */
-      line-height: 1.4; /* Improved line height for better readability */
-      color: #e0e0e0; /* Slightly lighter color for content to distinguish from title */
+      line-height: 1.5; /* Improved line height for readability */
+      color: #fff; /* White for content to stand out against black */
     }
   </style>
+  
+  
   
 
   
@@ -77,7 +81,7 @@
 
 <div id="container">
 
-  <h3>AprilTag Scenario Cards</h3>
+  <h3>Scenario Cards</h3>
 
   <p>This is a working example using AprilTag to pick a scenario card!</p>
   <p>Click on the 'Toggle Webcam' button to hide/show the webcam for testing purposes.</p>
@@ -110,7 +114,7 @@
       </div>
 
       <div class="scenario-card scenario-card-random-group-2" id="scenario-card-5">
-        <div class="title">Financial Crisis /div>
+        <div class="title">Financial Crisis </div>
         <div class="explanation"> All players lose half their tokens
         </div>
       </div>
