@@ -35,6 +35,7 @@ header, footer {
 main {
     flex: 1;
     padding: 1em;
+    color: rgb(255, 255, 255);
 }
 
 .sidebar-left {
