@@ -111,7 +111,7 @@
 
   <div class="scenario-card" id="scenario-card-9">
     <div class="title">SCENARIO CARD 9: Policy Change</div>
-    <div class="explanation">All players receive a bonus action this round due to new government policies</div>
+    <div class="explanation">All players receive unlimited action this round due to new government policies</div>
   </div>
 
   <div class="scenario-card" id="scenario-card-10">
@@ -148,6 +148,24 @@
   <div class="scenario-card" id="scenario-card-16">
     <div class="title">SCENARIO CARD 16: Budget Cut</div>
     <div class="explanation">All players lose 2 tokens due to budget cut</div>
+  </div>
+
+  <!-- RANDOM GROUP 1 -->
+
+  <div class="scenario-card scenario-card-random-group-1">
+    <div class="title">SCENARIO CARD 17: xxxxx</div>
+    <div class="explanation">xxxxxx</div>
+  </div>
+
+
+  <div class="scenario-card scenario-card-random-group-1">
+    <div class="title">SCENARIO CARD 18: xxxxx</div>
+    <div class="explanation">xxxxxx</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-1">
+    <div class="title">SCENARIO CARD 19: xxxxx</div>
+    <div class="explanation">xxxxxx</div>
   </div>
 
 </div>
@@ -335,27 +353,27 @@ tag05.onHide(() => {
 tagManager.addTag(tag05);
 
 
-//make an new tag
-var tag06 = new Tag(6);
+// //make an new tag
+// var tag06 = new Tag(6);
 
-// do stuff when it's visible
-tag06.onShow(() => {
-    var scenarioCard = document.getElementById("scenario-card-7")
-    scenarioCard.style.setProperty("display", "block");
+// // do stuff when it's visible
+// tag06.onShow(() => {
+//     var scenarioCard = document.getElementById("scenario-card-7")
+//     scenarioCard.style.setProperty("display", "block");
 
-    console.log("tag06 is now visible");
-});
+//     console.log("tag06 is now visible");
+// });
 
-// do stuff when it's hidden
-tag06.onHide(() => {
-    var scenarioCard = document.getElementById("scenario-card-7")
-    scenarioCard.style.setProperty("display", "none");
+// // do stuff when it's hidden
+// tag06.onHide(() => {
+//     var scenarioCard = document.getElementById("scenario-card-7")
+//     scenarioCard.style.setProperty("display", "none");
 
-    console.log("tag06 is now hidden");
-});
+//     console.log("tag06 is now hidden");
+// });
 
-// add this tag to the system that manages all tags
-tagManager.addTag(tag06);
+// // add this tag to the system that manages all tags
+// tagManager.addTag(tag06);
 
 //make an new tag
 var tag07 = new Tag(7);
@@ -537,7 +555,7 @@ tag14.onHide(() => {
 // add this tag to the system that manages all tags
 tagManager.addTag(tag14);
 
-
+/*
 //make an new tag
 var tag15 = new Tag(15);
 
@@ -559,7 +577,55 @@ tag15.onHide(() => {
 
 // add this tag to the system that manages all tags
 tagManager.addTag(tag15);
+*/
 
+
+
+
+////////////////////////////////
+/////////////////////////////
+// THIS PORTION activates multiple random scenario cards from one apriltag
+
+//make an new tag
+var tag6 = new Tag(6);
+
+// do stuff when it's visible
+tag6.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-1");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag6.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-1");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+
+
+});
+tagManager.addTag(tag6);
 
 
 
