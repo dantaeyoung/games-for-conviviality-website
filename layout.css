@@ -35,7 +35,21 @@ header, footer {
 main {
     flex: 1;
     padding: 1em;
-    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    opacity: 80%;
+    border-radius: 50px;
+    height: calc(100vh - 51vh);
+    display: flex;
+
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove the default border */
+  /*overflow: hidden; /* Hide any overflow content */
+  transform-origin: top center; /* Adjust origin if needed */
+  transform: scale(0.8); /* Scale content to fit */
 }
 
 .sidebar-left {
