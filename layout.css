@@ -35,7 +35,6 @@ header, footer {
 main {
     flex: 1;
     padding: 1em;
-    background-color: #f4f4f4;
 }
 
 .sidebar-left {
@@ -251,3 +250,4 @@ img {
     height: auto;
     display: block;
 }
+
