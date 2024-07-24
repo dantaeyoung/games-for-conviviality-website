@@ -48,8 +48,8 @@ iframe {
   width: 100%;
   height: 100%;
   border: none; /* Remove the default border */
-  /*overflow: hidden; /* Hide any overflow content */
-  transform: scale(0.65); /* Scale content to fit */
+  overflow: scroll; /* Hide any overflow content */
+  transform: scale(0.85); /* Scale content to fit */
   transform-origin: top center; /* Adjust origin if needed */
 }
 
@@ -138,7 +138,7 @@ footer {
 .GI {
   color: white;
   max-width: 500px;
-  background:#099156;
+  background:#269b66;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -148,7 +148,7 @@ footer {
 .ES {
   color: white;
   max-width: 500px;
-  background:#403eb7;
+  background:#0797cc  ;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -168,7 +168,7 @@ footer {
 .housing {
   color: black;
   max-width: 500px;
-  background:#fffc00;
+  background:#fef106;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -176,9 +176,9 @@ footer {
 }
 
 .commercial {
-  color: black;
+  color: white;
   max-width: 500px;
-  background:#fa7452;
+  background:#fa635c  ;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
