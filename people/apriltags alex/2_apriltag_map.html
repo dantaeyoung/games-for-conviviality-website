@@ -32,6 +32,7 @@
         top: 5px;
         right: 5px;
     }
+    
   </style>
 </head>
 
@@ -103,53 +104,53 @@ function toggleWebcamContainer() {
 
 
 //make an new tag
-var tag103 = new Tag(103);
+var tag6 = new Tag(6);
 
 // do stuff when it's visible
-tag103.onShow(() => {
+tag6.onShow(() => {
 
     var img = document.getElementById("map_underlay");
     img.style.setProperty("opacity", 0.8);
 
-    console.log("Tag 103 is now visible");
+    console.log("Tag 6 is now visible");
 });
 
 // do stuff when it's hidden
-tag103.onHide(() => {
+tag6.onHide(() => {
     var img = document.getElementById("map_underlay");
     img.style.setProperty("opacity", 0);
 
-    console.log("Tag 103 is now hidden");
+    console.log("Tag 6 is now hidden");
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag103);
+tagManager.addTag(tag6);
 
 
 
 
 
 //make an new tag
-var tag101 = new Tag(101);
+var tag15 = new Tag(15);
 
 // do stuff when it's visible
-tag101.onShow(() => {
+tag15.onShow(() => {
     var img = document.getElementById("map_racial");
     img.style.setProperty("opacity", 0.9);
 
-    console.log("Tag 101 is now visible");
+    console.log("Tag 15 is now visible");
 });
 
 // do stuff when it's hidden
-tag101.onHide(() => {
+tag15.onHide(() => {
     var img = document.getElementById("map_racial");
     img.style.setProperty("opacity", 0);
 
-    console.log("Tag 101 is now hidden");
+    console.log("Tag 15 is now hidden");
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag101);
+tagManager.addTag(tag15);
 
 
 

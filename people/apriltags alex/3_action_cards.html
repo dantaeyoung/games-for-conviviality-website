@@ -142,10 +142,10 @@ function toggleWebcamContainer() {
 
 
 //make an new tag
-var tag103 = new Tag(103);
+var tag6 = new Tag(6);
 
 // do stuff when it's visible
-tag103.onShow(() => {
+tag6.onShow(() => {
 
       var actionCards = document.getElementsByClassName("action-card");
       var randomIndex = Math.floor(Math.random() * actionCards.length);
@@ -161,7 +161,7 @@ tag103.onShow(() => {
 });
 
 // do stuff when it's hidden
-tag103.onHide(() => {
+tag6.onHide(() => {
 
     var actionCards = document.getElementsByClassName("action-card");
 
@@ -175,7 +175,7 @@ tag103.onHide(() => {
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag103);
+tagManager.addTag(tag6);
 
 
 
