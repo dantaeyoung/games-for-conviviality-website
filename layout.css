@@ -6,7 +6,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 body {
-  font-family: "Helvetica", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -33,9 +33,45 @@ header, footer {
 }
 
 main {
+  flex: 1;
+  padding: 5PX;
+  background-color: rgba(255, 255, 255, 0.8); /* Using rgba for transparency */
+  border-radius: 50px;
+  overflow: hidden; /* Ensure no overflow in main */
+  height: calc(100vh - 51vh); /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: TOP center;
+}
+
+iframe {
+  width: calc(100% - 10px); /* Adjust for padding */
+  height: calc(100% - 10px); /* Adjust for padding */
+  border: none; /* Remove the default border */
+  flex: 1;
+  margin: 0; /* Remove extra margin */
+  overflow: hidden; /* Hide any overflow content */
+  transform: scale(0.9); /* Scale content to fit */
+}
+/*main {
     flex: 1;
     padding: 1em;
-    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    opacity: 80%;
+    border-radius: 50px;
+    height: calc(100vh - 51vh);
+    display: flex;
+
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove the default border */
+  overflow: VISIBLE; /* Hide any overflow content */
+  transform-origin: top center; /* Adjust origin if needed */
+  transform: scale(0.8); /* Scale content to fit */
+  margin: 0px; /* Add some margin for spacing */
 }
 
 .sidebar-left {
@@ -123,7 +159,7 @@ footer {
 .GI {
   color: white;
   max-width: 500px;
-  background:#099156;
+  background:#269b66;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -133,7 +169,7 @@ footer {
 .ES {
   color: white;
   max-width: 500px;
-  background:#403eb7;
+  background:#0797cc  ;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -153,7 +189,7 @@ footer {
 .housing {
   color: black;
   max-width: 500px;
-  background:#fffc00;
+  background:#fef106;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -161,9 +197,9 @@ footer {
 }
 
 .commercial {
-  color: black;
+  color: white;
   max-width: 500px;
-  background:#fa7452;
+  background:#fa635c  ;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
