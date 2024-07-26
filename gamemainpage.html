@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style_game.css">
+</head>
+
+<body>
+
+    <h1>Crisis Rises!</h1>
+    <div>
+        <p>New York City is on the verge of a <strong>climate crisis</strong> , with rising sea levels threatening its very existence. </p>
+        <p>Can you, the leaders of agencies, build enough resilience to save the city from drowning in due time?</p>
+    </div>
+    <div class="action">
+        <h2>Action</h2>
+        <p>Action proceed clockwise.</p>
+        <p>Each player has <strong>2 actions per turn</strong>, with one action in their neighborhood and the other outside their neighbourhood</p>
+        <p>Each player's role card mentions special abilities and possible actions.</p>
+        <h3>Possible actions are:</h3>
+        <p>Build one element (If conditions for building chosen element is not currently met, then you cannot build the chosen element.) </p>
+        <p>Demolish one element.</p>
+        <p>Swap one built element with another built element (counts as 2 actions).</p>
+        <h3>When the timer runs out:</h3>
+        <p>Stop your current action.</p>
+        <p>Reset the timer.</p>
+        <p>Draw from the flood deck and roll the dice; then FINISH your incomplete action.</p>
+    </div>
+
+    <h2>Element Functions</h2>
+    <div class="GI">
+        <h3>Green Infrastructure</h3>
+        <p><strong>2 Tokens</strong></p>
+        <p>- Green Infrastructure abosorbs water. </p>
+        <p>- <strong>The number of Green Infrastructure</strong> in a flood zone determines your <strong>protected numbers</strong> when rolling after drawing from the Flood Deck (e.g., 3 G.I. means protected numbers are 1, 2, and 3)</p>
+    </div>
+
+    <div class="ES">
+        <h3>Emergency Services</h3>
+        <p><strong>2 Tokens</strong></p>
+        <p>- Reclaims flooded land. </p>
+        <p>- Building an emergency service allows for <strong>reclaiming</strong> the flooded region to start building again</p>
+    </div>
+
+    <div class="wall">
+        <h3>Wall</h3>
+        <p><strong>3 Tokens</strong></p>
+        <p>- Requires at least 2 Green Infrastructure in the neighborhood to build. </p>
+        <p>- Stops water.</p>
+        <p>- A <strong>continuous</strong> wall can permanently prevent flooding inland. Each flood <strong>removes 1 wall unit in your zone</strong> before the wall is completed.</p>
+    </div>
+
+    <div class="housing">
+        <h3>Housing</h3>
+        <p><strong>4 Tokens</strong></p>
+        <p>- Provides a population with shelter. </p>
+    </div>
+
+    <div class="commercial">
+        <h3>Commercial </h3>
+        <p><strong>4 Tokens</strong></p>
+        <p>- Requires <strong>at least 2 housing units</strong> in the neighborhood to build. </p>
+        <p>- Generates revenue: collect <strong>1 token</strong> per commercial unit.</p>
+    </div>
+
+    <h2>Role Cards</h2>
+    <div class="rolecard">
+        <div class="card_image">
+            <img src="Role Card Image\UDer.png" alt="Urban Designer" />
+        </div>
+        <div class="card_back">
+            <img src="Role Card Image\designerback.png" alt="udback" />
+        </div>
+    </div>
+
+    <div class="rolecard">
+        <div class="card_image">
+            <img src="Role Card Image\PARK.png" alt="Park Department" />
+        </div>
+        <div class="card_back">
+         <img src="Role Card Image\parkback.png" alt="parkback" />
+        </div>
+    </div>
+
+    <div class="rolecard">
+        <div class="card_image">
+            <img src="Role Card Image\PRIVATE.png" alt="Private Developer" />
+        </div>
+        <div class="card_back">
+            <img src="Role Card Image\privateback.png" alt="pdback" />
+        </div>    
+    </div>
+
+    <div class="rolecard">
+        <div class="card_image">
+            <img src="Role Card Image\CONSTRUCTION.png" alt="Construction Team" />
+        </div>
+        <div class="card_back">
+            <img src="Role Card Image\constructionback.png" alt="ctback" />
+        </div>      
+    </div>
+
+    <div class="rolecard">
+        <div class="card_image">
+            <img src="Role Card Image\NYCEDC.png" alt="Economic Development Corporation" />
+        </div>
+        <div class="card_back">
+            <img src="Role Card Image\nycedcback.png" alt="edcback" />
+        </div>     
+    </div>
+
+    <div class="rolecard">
+        <div class="card_image">
+            <img src="Role Card Image\NYCDCP.png" alt="Department of City Planning" />
+        </div>
+        <div class="card_back">
+            <img src="Role Card Image\NYCDCPback.png" alt="dcpback" />
+        </div>
+    </div>
+
+    <div class="rolecard">
+        <div class="card_image">
+            <img src="Role Card Image\NIMBY.png" alt="NIMBY Alliance" />
+        </div>
+        <div class="card_back">
+            <img src="Role Card Image\nimbyback.png" alt="nimbyback" />
+        </div>
+    </div>
+
+    <div class="rolecard">
+        <div class="card_image">
+            <img src="Role Card Image\MOCEJ.png" alt="MOCEJ" />
+        </div>
+        <div class="card_back">
+            <img src="Role Card Image\MOCEJback.png" alt="mocejback" />
+        </div>
+    </div>
+
+<div class="rounded-rectangle"><a href="inspection.html">You are under inspection! Click here!</a></div>
+<div class="rounded-rectangle"><a href="scenario.html">Pick a scenario! Click here!</a></div>
+
+
+<div id="toggle-webcam"><button onclick="toggleWebcamContainer()">Toggle Webcam</button></div>
+<div id="webcam-container" style="display:inside;">
+    <video id="webcam_canvas" playsinline autoplay style="display:inside"></video>
+    <canvas id="out_canvas"></canvas>
+</div>
+
+
+
+</body>
+
+<script src="apriltags\apriltagjs\start_video.js" async></script>
+<script src="apriltags\apriltagjs\on_tag_logic.js"></script>
+<script type="module" src="apriltags\apriltagjs\video_process.js" async></script>
+
+<script>
+
+// create a tagManager
+const tagManager = new TagManager();
+
+function toggleWebcamContainer() {
+    var container = document.getElementById('webcam-container');
+    if (container.style.display === 'none') {
+        container.style.display = 'block';
+    } else {
+        container.style.display = 'none';
+    }
+}
+
+
+
+</script>
+
+</html>
