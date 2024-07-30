@@ -32,6 +32,10 @@
         top: 5px;
         right: 5px;
     }
+
+    #out_canvas{
+      width: 400px;
+    }
   </style>
 </head>
 
@@ -103,55 +107,75 @@ function toggleWebcamContainer() {
 
 
 //make an new tag
-var tag103 = new Tag(103);
+var tag5 = new Tag(5);
 
 // do stuff when it's visible
-tag103.onShow(() => {
+tag5.onShow(() => {
 
     var img = document.getElementById("map_underlay");
     img.style.setProperty("opacity", 0.8);
 
-    console.log("Tag 103 is now visible");
+    console.log("Tag 5 is now visible");
 });
 
 // do stuff when it's hidden
-tag103.onHide(() => {
+tag5.onHide(() => {
     var img = document.getElementById("map_underlay");
     img.style.setProperty("opacity", 0);
 
-    console.log("Tag 103 is now hidden");
+    console.log("Tag 5 is now hidden");
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag103);
+tagManager.addTag(tag5);
 
 
 
 
 
 //make an new tag
-var tag101 = new Tag(101);
+var tag6= new Tag(7);
 
 // do stuff when it's visible
-tag101.onShow(() => {
+tag7.onShow(() => {
     var img = document.getElementById("map_racial");
     img.style.setProperty("opacity", 0.9);
 
-    console.log("Tag 101 is now visible");
+    console.log("Tag 7 is now visible");
 });
 
 // do stuff when it's hidden
-tag101.onHide(() => {
+tag7.onHide(() => {
     var img = document.getElementById("map_racial");
     img.style.setProperty("opacity", 0);
 
-    console.log("Tag 101 is now hidden");
+    console.log("Tag 7 is now hidden");
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag101);
+tagManager.addTag(tag7);
 
+//make an new tag
+var tag6= new Tag(6);
 
+// do stuff when it's visible
+tag6.onShow(() => {
+    var img = document.getElementById("map_racial");
+    img.style.setProperty("opacity", 0.9);
+
+    console.log("Tag 6 is now visible");
+});
+
+// do stuff when it's hidden
+tag6.onHide(() => {
+    var img = document.getElementById("map_racial");
+    img.style.setProperty("opacity", 0);
+
+    console.log("Tag 6 is now hidden");
+});
+
+// add this tag to the system that manages all tags
+tagManager.addTag(tag6);
 
 
 
