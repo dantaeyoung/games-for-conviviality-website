@@ -44,6 +44,10 @@
     <p>Hint 2: <span class="hint">Try <code>document.getElementById('body').style.setProperty('background-color', 'light-blue');</code></span></p>
 <div id="container">
 
+    <video id="myVideo" width="640" height="360" controls loop autoplay>
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
 
 </div>
@@ -71,32 +75,133 @@ const tagManager = new TagManager();
 //////////////////
 
 
-
-
-
-
-
-//make an new tag
-var tag103 = new Tag(103);
+//make an new tag (6PM)
+var tag18 = new Tag(18);
 
 // do stuff when it's visible
-tag103.onShow(() => {
-    console.log("Tag 103 is now visible!");
-});
+tag18 .onShow(() => {
+    console.log("Tag 18 is here!");        
+    
+    // gets the video
+    const video = document.getElementById('myVideo');
+
+    // sets the current time to 3 seconds
+    video.currentTime = 18;
+})
+
 
 // do stuff when it's hidden
-tag103.onHide(() => {
-    console.log("Tag 103 is now hidden!!");
+tag18 .onHide(() => {
+    console.log("Tag 18 is away!!");
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag103);
+tagManager.addTag(tag18);
+
+
+
+
+
+//make an new tag (Lunch TIME)
+var tag17 = new Tag(12);
+
+// do stuff when it's visible
+tag17 .onShow(() => {
+    console.log("Tag 12 is here!");        
+    
+    // gets the video
+    const video = document.getElementById('myVideo');
+
+    // sets the current time to 5 seconds
+    video.currentTime = 65;
+})
+
+
+// do stuff when it's hidden
+tag17 .onHide(() => {
+    console.log("Tag 12 is away!!");
+});
+
+// add this tag to the system that manages all tags
+tagManager.addTag(tag17);
 
 
 
 
 
 
+
+//make an new tag (9am)
+var tag9 = new Tag(9);
+
+// do stuff when it's visible
+tag9 .onShow(() => {
+    console.log("Tag 9 is here!");        
+    
+    // gets the video
+    const video = document.getElementById('myVideo');
+
+    // sets the current time to 5 seconds
+    video.currentTime = 9;
+})
+
+
+// do stuff when it's hidden
+tag17 .onHide(() => {
+    console.log("Tag 9 is away!!");
+});
+
+// add this tag to the system that manages all tags
+tagManager.addTag(tag9);
+
+
+
+
+//make an new tag (9PM)
+var tag21 = new Tag(21);
+
+// do stuff when it's visible
+tag21 .onShow(() => {
+    console.log("Tag 21 is here!");        
+    
+    // gets the video
+    const video = document.getElementById('myVideo');
+
+    // sets the current time to 9 seconds
+    video.currentTime = 90;
+})
+
+
+// do stuff when it's hidden
+tag21 .onHide(() => {
+    console.log("Tag 21 is away!!");
+});
+
+// add this tag to the system that manages all tags
+tagManager.addTag(tag21);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById('body').style.setProperty('background-color', 'yellow');
 
 
 //////////////////

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisis Rises Game Page</title>
+    <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+    <header>
+        <h1><i>CRISIS RISES!</i></h1>
+    </header>
+    <div class="container">
+        <aside class="sidebar-left">
+        <aside class="action">
+            <h2>Action!</h2>
+            <br>
+            <p>Action proceed clockwise.</p>
+            <p>Each player has <strong>2 actions per turn</strong>, with one action in their neighborhood and the other outside their neighbourhood</p>
+            <p>Each player's role card mentions special abilities and possible actions.</p>
+            <br>
+            <h3>Possible actions are:</h3>
+            <p>Build one element (If conditions for building chosen element is not currently met, then you cannot build the chosen element.) </p>
+            <p>Demolish one element.</p>
+            <p>Swap one built element with another built element (counts as 2 actions).</p>
+            <br>
+            <h3>When the timer runs out:</h3>
+            <p>Stop your current action.</p>
+            <p>Reset the timer.</p>
+            <p>Draw from the flood deck and roll the dice; then FINISH your incomplete action.</p>
+        </aside>
+        </aside>
+     <main>
+         <iframe src='inspection.html' scrolling="no"></iframe>
+     </main>
+        <aside class="sidebar-right">
+        <div class="GI">
+            <h3>Green Infrastructure - 2 Tokens</h3>
+            <p>- Green Infrastructure abosorbs water. </p>
+            <p>- <strong>The number of Green Infrastructure</strong> in a flood zone determines your <strong>protected numbers.</strong> when rolling after drawing from the Flood Deck</p>
+        </div>
+    
+        <div class="ES">
+            <h3>Emergency Services - 2 Tokens</h3>
+            <p>- Reclaims flooded land. </p>
+            <p>- Building an emergency service allows for <strong>reclaiming</strong> the flooded region.</p>
+        </div>
+    
+        <div class="wall">
+            <h3>Wall - 3 Tokens</h3>
+            <p>- Stops water.</p>
+            <p>- Requires at least 2 Green Infrastructure in the neighborhood to build. </p>
+            <p>- A <strong>continuous</strong> wall can permanently prevent flooding inland.</p>
+            <p>- Each flood <strong>removes 1 wall unit in your zone</strong> before the wall is completed.</p>
+        </div>
+    
+        <div class="housing">
+            <h3>Housing - 4 Tokens</h3>
+            <p>- Provides a population with shelter. </p>
+        </div>
+    
+        <div class="commercial">
+            <h3>Commercial - 4 Tokens</h3>
+            <p>- Requires <strong>at least 2 housing units</strong> in the neighborhood to build. </p>
+            <p>- Generates revenue: collect <strong>1 token</strong> per commercial unit.</p>
+        </div>
+        </aside>
+    </div>
+    <footer>
+        <div class="rolecard-container">
+            <div class="rolecard">
+                <div class="card_image">
+                    <img src="Role Card Image\UDer.png" alt="Urban Designer" />
+                </div>
+                <div class="card_back">
+                    <img src="Role Card Image\designerback.png" alt="udback" />
+                </div>
+            </div>
+        
+            <div class="rolecard">
+                <div class="card_image">
+                    <img src="Role Card Image\PARK.png" alt="Park Department" />
+                </div>
+                <div class="card_back">
+                <img src="Role Card Image\parkback.png" alt="parkback" />
+                </div>
+            </div>
+        
+            <div class="rolecard">
+                <div class="card_image">
+                    <img src="Role Card Image\PRIVATE.png" alt="Private Developer" />
+                </div>
+                <div class="card_back">
+                    <img src="Role Card Image\privateback.png" alt="pdback" />
+                </div>    
+            </div>
+        
+            <div class="rolecard">
+                <div class="card_image">
+                    <img src="Role Card Image\CONSTRUCTION.png" alt="Construction Team" />
+                </div>
+                <div class="card_back">
+                    <img src="Role Card Image\constructionback.png" alt="ctback" />
+                </div>      
+            </div>
+        
+            <div class="rolecard">
+                <div class="card_image">
+                    <img src="Role Card Image\NYCEDC.png" alt="Economic Development Corporation" />
+                </div>
+                <div class="card_back">
+                    <img src="Role Card Image\nycedcback.png" alt="edcback" />
+                </div>     
+            </div>
+        
+            <div class="rolecard">
+                <div class="card_image">
+                    <img src="Role Card Image\NYCDCP.png" alt="Department of City Planning" />
+                </div>
+                <div class="card_back">
+                    <img src="Role Card Image\NYCDCPback.png" alt="dcpback" />
+                </div>
+            </div>
+        
+            <div class="rolecard">
+                <div class="card_image">
+                    <img src="Role Card Image\NIMBY.png" alt="NIMBY Alliance" />
+                </div>
+                <div class="card_back">
+                    <img src="Role Card Image\nimbyback.png" alt="nimbyback" />
+                </div>
+            </div>
+        
+            <div class="rolecard">
+                <div class="card_image">
+                    <img src="Role Card Image\MOCEJ.png" alt="MOCEJ" />
+                </div>
+                <div class="card_back">
+                    <img src="Role Card Image\MOCEJback.png" alt="mocejback" />
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script src="apriltags\apriltagjs\start_video.js" async></script>
+<script src="apriltags\apriltagjs\on_tag_logic.js"></script>
+<script type="module" src="apriltags\apriltagjs\video_process.js" async></script>
+
+<script>
+
+// create a tagManager
+const tagManager = new TagManager();
+
+function toggleWebcamContainer() {
+    var container = document.getElementById('webcam-container');
+    if (container.style.display === 'none') {
+        container.style.display = 'block';
+    } else {
+        container.style.display = 'none';
+    }
+}
+
+
+
+</script>
+
+</html>

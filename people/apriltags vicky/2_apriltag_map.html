@@ -35,7 +35,8 @@
   </style>
 </head>
 
-<body>
+<body id="text">
+
 
 <div id="container">
 
@@ -103,28 +104,27 @@ function toggleWebcamContainer() {
 
 
 //make an new tag
-var tag103 = new Tag(103);
+var tag5 = new Tag(5);
 
 // do stuff when it's visible
-tag103.onShow(() => {
+tag5.onShow(() => {
 
     var img = document.getElementById("map_underlay");
     img.style.setProperty("opacity", 0.8);
-    console.log("Tag 103 is now visible");
+    console.log("Tag 5 is now visible");
 });
 
 // do stuff when it's hidden
-tag103.onHide(() => {
+tag5.onHide(() => {
     var img = document.getElementById("map_underlay");
     img.style.setProperty("opacity", 0);
-    document.getElementById("body") 
-    body.style.setProperty ('background color', blue)
+    
   
-    console.log("Tag 103 is now hidden");
+    console.log("Tag 5 is now hidden");
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag103);
+tagManager.addTag(tag5);
 
 
 

@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .buttons {
+      margin: 10px 0;
+    }
+  
+    .images {
+      height: 500px;
+      position: relative;
+    }
+  
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+    }
+  
+    #webcam-container {
+      position: absolute;
+      top: 30px;
+      left: 5px;
+    }
+  
+    #toggle-webcam {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  
+    .scenario-card {
+      display: none; /* Initially hide the card */
+      width: 300px; /* 4:3 aspect ratio width */
+      height: 225px; /* 4:3 aspect ratio height */
+      padding: 20px;
+      margin: 20px auto; /* Center card horizontally */
+      border-radius: 15px; /* Rounded corners */
+      border: 2px solid #ffeb3b; /* Yellow border for emphasis */
+      background-color: #000; /* Black background for strong contrast */
+      color: #fff; /* White text for readability */
+      font-family: Helvetica, Arial, sans-serif; /* Helvetica font */
+      box-sizing: border-box; /* Ensures padding and border are included in the total width and height */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */
+      position: relative; /* To ensure proper placement of internal elements */
+    }
+  
+    .scenario-card.visible {
+      display: block; /* Show the card when the 'visible' class is added */
+    }
+  
+    .scenario-card .title {
+      font-size: 1.5em; /* Larger font size for emphasis */
+      font-weight: 700; /* Bold title for better hierarchy */
+      margin-bottom: 15px; /* Space below title */
+      line-height: 1.2; /* Improved line height for better text spacing */
+      color: #ffeb3b; /* Bright yellow for the title */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Subtle text shadow for readability */
+      border-bottom: 3px solid #ffeb3b; /* Yellow underline for emphasis */
+      padding-bottom: 5px; /* Space between text and underline */
+    }
+  
+    .scenario-card .content {
+      font-size: 1em; /* Regular font size for content */
+      line-height: 1.5; /* Improved line height for readability */
+      color: #fff; /* White for content to stand out against black */
+    }
+  </style>
+  
+  
+  
+
+  
+  
+</head>
+
+<body>
+
+<div id="container">
+
+    <div id="scenario-cards">
+
+        <!-- RANDOM GROUP 1 - Weather Events-->
+          <div class="scenario-card scenario-card-random-group-1" id="scenario-card-1">
+        <div class="title">Heavy Storm</div>
+        <div class="explanation">Zones 6, 7, 10, 11 generate no revenue next cycle due to high density impact.</div>
+      </div>
+
+      <div class="scenario-card scenario-card-random-group-1" id="scenario-card-2">
+        <div class="title"> Wind Event</div>
+        <div class="explanation">Zones 6, 7, 10, 11 cannot build anything due to high density impact.</div>
+      </div>
+
+      <div class="scenario-card scenario-card-random-group-1" id="scenario-card-3">
+        <div class="title"> Superstorm Event</div>
+        <div class="explanation"> Zones 1, 2, 4, 5, 8 lose 5 blocks of residential buildings.
+        </div>
+      </div>
+
+        <!-- RANDOM GROUP 2 - Financial Challenges-->
+
+      <div class="scenario-card scenario-card-random-group-2" id="scenario-card-4">
+        <div class="title">Immediate Relief Fund</div>
+        <div class="explanation">No tokens generated this cycle as all are used for immediate relief
+        </div>
+      </div>
+
+      <div class="scenario-card scenario-card-random-group-2" id="scenario-card-5">
+        <div class="title">Financial Crisis </div>
+        <div class="explanation"> All players lose half their tokens
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-2" id="scenario-card-6">
+    <div class="title">Resource Allocation Dilemma </div>
+    <div class="explanation">Players collectively lose 10 tokens. Each player must contribute at least 1 token</div>
+  </div>
+
+
+    <!-- RANDOM GROUP 3 - Infrastructure Failures-->
+  <div class="scenario-card scenario-card-random-group-3" id="scenario-card-7">
+    <div class="title">Infrastructure Failure</div>
+    <div class="explanation">All inland zones lose all public services</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-3" id="scenario-card-8">
+    <div class="title"> Infrastructure Failure 02 </div>
+    <div class="explanation">All shore zones lose all public services.</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-3" id="scenario-card-9">
+    <div class="title">Power Outage </div>
+    <div class="explanation">All inland zones lose all commercial revenue for this round</div>
+  </div>
+
+    <!-- RANDOM GROUP 4 - Public Health and Safety -->
+
+  <div class="scenario-card scenario-card-random-group-4" id="scenario-card-10">
+    <div class="title">Cholera Outbreak </div>
+    <div class="explanation">All inland zones lose 1 Green Infrastructure due to bad maintenance
+    </div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-4" id="scenario-card-11">
+    <div class="title">Cholera Outbreak </div>
+    <div class="explanation">All shore zones lose 1 Green Infrastructure due to bad maintenance</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-4" id="scenario-card-12">
+    <div class="title">Public Health Crisis</div>
+    <div class="explanation">Zones 6, 10, and 13 generate no revenue for the next three rounds and lose one residential building each</div>
+  </div>
+
+    <!-- RANDOM GROUP 5 -->
+
+  <div class="scenario-card scenario-card-random-group-5" id="scenario-card-13">
+    <div class="title">Political Unrest </div>
+    <div class="explanation">The next player skips their turn due to citywide protests</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-5" id="scenario-card-14">
+    <div class="title">Riots </div>
+    <div class="explanation">Department of Sanitation and Department of City Planning skip their next turn</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-5" id="scenario-card-15">
+    <div class="title">Political Turmoil</div>
+    <div class="explanation">MOCEJ and Department of Parks skip their next two turns</div>
+  </div>
+
+    <!-- RANDOM GROUP 6 -->
+
+  <div class="scenario-card scenario-card-random-group-6" id="scenario-card-16">
+    <div class="title">Toxic Spill</div>
+    <div class="explanation">All Green Infrastructure in Zone 8,10 and 12 is contaminated and unusable. Players must use actions to clean up (demolish and rebuild) the spill before building new infrastructure</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-6" id="scenario-card-17">
+    <div class="title">Contaminated Water Supply</div>
+    <div class="explanation"> Zones 2, 6, and 12 face water contamination issues. All emergency services in these zones become non-functional for the next three rounds.</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-6" id="scenario-card-18">
+    <div class="title">Wildfire</div>
+    <div class="explanation">Zones 3, 5, and 11 have all parks and residential buildings destroyed. Players must rebuild these zones completely.</div>
+  </div>
+
+  <!-- RANDOM GROUP 7 -->
+
+  <div class="scenario-card scenario-card-random-group-7" id="scenario-card-19">
+    <div class="title">Wall Failure</div>
+    <div class="explanation">A wall barrier fails. Draw an additional flood card for this zone and spend 3 tokens to repair the wall, or the zone remains unprotected.</div>
+  </div>
+
+
+  <div class="scenario-card scenario-card-random-group-7" id="scenario-card-20">
+    <div class="title">Emergency Wall Construction</div>
+    <div class="explanation">Players must collectively build a wall barrier in Zone 2 within two rounds. If not completed, draw an additional flood card for Zone 2 each round until it is built.</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-7" id="scenario-card-21">
+    <div class="title">Reinforcement Required</div>
+    <div class="explanation">Players must reinforce an existing wall in Zone 16 by spending 2 tokens per player. If not reinforced, the wall will breach, and the zone will flood.</div>
+  </div>
+
+  <!-- RANDOM GROUP 8 -->
+
+<div class="scenario-card scenario-card-random-group-8" id="scenario-card-22">
+  <div class="title">Economic Downturn</div>
+  <div class="explanation">All players lose 3 tokens due to a sudden economic downturn affecting the city’s revenue.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-8" id="scenario-card-23">
+  <div class="title">Tax Increase</div>
+  <div class="explanation">Players must pay an additional 2 tokens each due to a new tax increase. Failure to do so results in a penalty of losing one action this round.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-8" id="scenario-card-24">
+  <div class="title">Forced Relocation</div>
+  <div class="explanation">Due to safety concerns, move all residential buildings from Zones 2,5 and 9 to other zones. These buildings cannot generate revenue during the relocation process.</div>
+</div>
+
+<!-- RANDOM GROUP 9 -->
+
+<div class="scenario-card scenario-card-random-group-9" id="scenario-card-25">
+  <div class="title">Environmental Hazard</div>
+  <div class="explanation">A hazardous material spill occurs in Zone 3. Players must spend 4 tokens to clean it up or face reduced revenue from this zone for the next two rounds.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-9" id="scenario-card-26">
+  <div class="title">Climate Change Initiative</div>
+  <div class="explanation">Players receive 3 tokens each for investing in climate change mitigation efforts. However, zones with high pollution levels will experience reduced income this cycle.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-9" id="scenario-card-27">
+  <div class="title">Wildlife Conservation</div>
+  <div class="explanation">A new wildlife conservation area is set up in Zone 5. All players must contribute 2 tokens each to maintain this area or suffer a penalty of losing 1 token per round until contributions are made.</div>
+</div>
+
+<!-- RANDOM GROUP 10 -->
+
+<div class="scenario-card scenario-card-random-group-10"id="scenario-card-28">
+  <div class="title">Transport Strike</div>
+  <div class="explanation">A transport strike disrupts deliveries. All players lose 2 tokens and face delays in infrastructure projects for the next round.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-10" id="scenario-card-29">
+  <div class="title">Supply Chain Issue</div>
+  <div class="explanation">Due to a supply chain issue, players must spend 3 tokens to procure necessary materials. Failure to do so results in halted construction projects for this round.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-10" id="scenario-card-30">
+  <div class="title">Logistics Improvement</div>
+  <div class="explanation">Players receive a bonus of 2 tokens each due to improvements in logistics. Additionally, all infrastructure projects proceed faster this round.</div>
+</div>
+
+<!-- RANDOM GROUP 11 -->
+
+<div class="scenario-card scenario-card-random-group-11" id="scenario-card-31">
+  <div class="title">Community Rally</div>
+  <div class="explanation">A community rally boosts morale and funding. All players receive 2 bonus action this round.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-11" id="scenario-card-32">
+  <div class="title">Public Support Boost</div>
+  <div class="explanation">Public support increases. Each player receives 3 additional tokens and has reduced costs by 1 token for infrastructure upgrades this round.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-11" id="scenario-card-33">
+  <div class="title">Volunteer Program</div>
+  <div class="explanation">A new volunteer program is initiated. All players gain 2 tokens and can use one free action this round to complete any ongoing projects.</div>
+</div>
+
+<!-- RANDOM GROUP 12 -->
+
+<div class="scenario-card scenario-card-random-group-12" id="scenario-card-34">
+  <div class="title">Stormwater overflows</div>
+  <div class="explanation">Zone 11 has been flooded</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-12" id="scenario-card-35">
+  <div class="title">Stormwater overflows</div>
+  <div class="explanation">Zone 7 has been flooded</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-12" id="scenario-card-36">
+  <div class="title">Stormwater overflows</div>
+  <div class="explanation">Zone 14 has been flooded</div>
+</div>
+
+<!-- RANDOM GROUP 13 -->
+
+<div class="scenario-card scenario-card-random-group-13" id="scenario-card-37">
+  <div class="title">Economic Downturn</div>
+  <div class="explanation">All commercial buildings generate half their usual revenue for the next three rounds.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-13" id="scenario-card-38">
+  <div class="title">Financial Meltdown</div>
+  <div class="explanation">All players lose half their tokens immediately.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-13" id="scenario-card-39">
+  <div class="title">Budget Cut </div>
+  <div class="explanation">All players lose 2 tokens due to budget cuts.</div>
+</div>
+
+<!-- RANDOM GROUP 14 -->
+
+<div class="scenario-card scenario-card-random-group-14" id="scenario-card-40">
+  <div class="title">Superstorm Surge</div>
+  <div class="explanation">Draw 5 additional flood cards and apply their effects immediately. </div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-14" id="scenario-card-41">
+  <div class="title">Environmental Disaster</div>
+  <div class="explanation">An environmental disaster affects Zones 1, 8, and 15, destroying all parks and public services in these zones. These zones must be rebuilt from scratch.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-14" id="scenario-card-42">
+  <div class="title">Flood Zone Expansion</div>
+  <div class="explanation">o	Due to extreme weather, the flood zone expands. Draw an additional flood card each round for the next three rounds.</div>
+</div>
+
+<!-- RANDOM GROUP 15 -->
+
+<div class="scenario-card scenario-card-random-group-15" id="scenario-card-43">
+  <div class="title">Wall Expansion Project</div>
+  <div class="explanation">The city initiates a wall expansion project. For the next three rounds, players can build wall barriers at a reduced cost of 2 tokens instead of 3.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-15" id="scenario-card-44">
+  <div class="title">Wall Maintenance Crisis</div>
+  <div class="explanation">o	Lack of maintenance leads to weakening wall barriers in Zones 2 and 8. Spend 1 token per player to maintain these walls, or they will fail in the next flood event.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-15" id="scenario-card-45">
+  <div class="title">Wall Inspection</div>
+  <div class="explanation">An inspection reveals weaknesses in all wall barriers. Players must spend 1 token per wall barrier on the board to ensure their integrity, or they risk failure of losing all in the next flood event.</div>
+</div>
+
+</div>
+
+
+
+
+<div id="toggle-webcam"><button onclick="toggleWebcamContainer()">Toggle Webcam</button></div>
+<div id="webcam-container" style="display:inside;">
+    <video id="webcam_canvas" playsinline autoplay style="display:inside"></video>
+    <canvas id="out_canvas"></canvas>
+</div>
+
+</body>
+
+<script src="apriltags\apriltagjs\start_video.js" async></script>
+<script src="apriltags\apriltagjs\on_tag_logic.js"></script>
+<script type="module" src="apriltags\apriltagjs\video_process.js" async></script>
+
+<script>
+
+// create a tagManager
+const tagManager = new TagManager();
+
+
+function toggleWebcamContainer() {
+    var container = document.getElementById('webcam-container');
+    if(container.style.getPropertyValue("opacity") == 1 || container.style.getPropertyValue("opacity") == "") {
+
+        container.style.setProperty("opacity", 0);
+
+    } else {
+        container.style.setProperty("opacity", 1);
+
+    }
+}
+//////////////////
+/// CHANGE CODE BELOW
+//////////////////
+//////////////////
+//////////////////
+//////////////////
+//////////////////
+
+
+
+
+
+
+
+//make an new tag
+var tag00 = new Tag(0);
+
+// do stuff when it's visible
+tag00.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-1");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag00.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-1");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag00);
+
+//make an new tag
+var tag01 = new Tag(1);
+
+// do stuff when it's visible
+tag01.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-2");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag01.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-2");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag01);
+
+//make an new tag
+var tag02 = new Tag(2);
+
+// do stuff when it's visible
+tag02.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-3");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag02.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-3");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag02);
+
+//make an new tag
+var tag03 = new Tag(3);
+
+// do stuff when it's visible
+tag03.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-4");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag03.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-4");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag03);
+
+//make an new tag
+var tag04 = new Tag(4);
+
+// do stuff when it's visible
+tag00.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-5");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag04.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-5");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag04);
+
+//make an new tag
+var tag05 = new Tag(5);
+
+// do stuff when it's visible
+tag05.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-6");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag00.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-6");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag05);
+
+//make an new tag
+var tag06 = new Tag(6);
+
+// do stuff when it's visible
+tag06.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-7");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag06.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-7");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag06);
+
+//make an new tag
+var tag07 = new Tag(7);
+
+// do stuff when it's visible
+tag07.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-8");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag07.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-8");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag07);
+
+//make an new tag
+var tag08 = new Tag(8);
+
+// do stuff when it's visible
+tag08.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-9");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag08.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-9");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag08);
+
+
+//make an new tag
+var tag09 = new Tag(9);
+
+// do stuff when it's visible
+tag09.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-10");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag09.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-10");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag09);
+
+//make an new tag
+var tag10 = new Tag(10);
+
+// do stuff when it's visible
+tag10.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-11");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag10.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-11");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag10);
+
+//make an new tag
+var tag11 = new Tag(11);
+
+// do stuff when it's visible
+tag11.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-12");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag11.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-12");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag11);
+
+//make an new tag
+var tag12 = new Tag(12);
+
+// do stuff when it's visible
+tag12.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-13");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag12.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-13");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag12);
+
+//make an new tag
+var tag13 = new Tag(13);
+
+// do stuff when it's visible
+tag13.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-14");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag13.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-14");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag13);
+
+//make an new tag
+var tag14 = new Tag(14);
+
+// do stuff when it's visible
+tag14.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-15");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag14.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-15");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag14);
+
+
+//make an new tag
+var tag15 = new Tag(15);
+
+// do stuff when it's visible
+tag15.onShow(() => {
+    var scenarioCard = document.getElementById("scenario-card-16")
+    scenarioCard.style.setProperty("display", "block");
+
+    console.log("tag15 is now visible");
+});
+
+// do stuff when it's hidden
+tag15.onHide(() => {
+    var scenarioCard = document.getElementById("scenario-card-16")
+    scenarioCard.style.setProperty("display", "none");
+
+    console.log("tag15 is now hidden");
+});
+
+// add this tag to the system that manages all tags
+tagManager.addTag(tag15);
+
+
+//// Detecting Errors - April Tag Fun - Richa ///
+
+function processDetections(tags) {
+    tagManager.updateTags(tags);
+}
+
+
+
+</script>
+
+</body>
+</html>

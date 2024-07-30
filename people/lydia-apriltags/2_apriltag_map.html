@@ -21,10 +21,9 @@
       opacity: 0;
     }
 
-    #webcam-container {
-        position: absolute;
-        top: 30px;
-        left: 5px;
+    #out_canvas {
+       
+        max-width: 500px;
     }
 
     #toggle-webcam {
@@ -32,6 +31,7 @@
         top: 5px;
         right: 5px;
     }
+
   </style>
 </head>
 
@@ -43,6 +43,14 @@
 
   <p>This is a working example using AprilTag to hide/show map overlays! This is a variant of the 'map.html' file in the 'javascript challenges' folder.</p>
   <p>Click on the 'Toggle Webcam' button to hide/show the webcam for testing purposes.</p>
+
+
+  <div id="toggle-webcam"><button onclick="toggleWebcamContainer()">Toggle Webcam</button></div>
+<div id="webcam-container" >
+    <video id="webcam_canvas" playsinline autoplay style="display:none"></video>
+    <canvas id="out_canvas"></canvas>
+</div>
+
 
     <h3>Challenge 1:</h3>
     <p>Add two more tags in order to activate/disable all four map layers.</p>
@@ -63,11 +71,7 @@
 
 
 
-<div id="toggle-webcam"><button onclick="toggleWebcamContainer()">Toggle Webcam</button></div>
-<div id="webcam-container" style="display:none;">
-    <video id="webcam_canvas" playsinline autoplay style="display:none"></video>
-    <canvas id="out_canvas"></canvas>
-</div>
+
 
 </body>
 
@@ -103,10 +107,10 @@ function toggleWebcamContainer() {
 
 
 //make an new tag
-var tag103 = new Tag(103);
+var tag5 = new Tag(5);
 
 // do stuff when it's visible
-tag103.onShow(() => {
+tag5.onShow(() => {
 
     var img = document.getElementById("map_underlay");
     img.style.setProperty("opacity", 0.8);
@@ -115,25 +119,25 @@ tag103.onShow(() => {
 });
 
 // do stuff when it's hidden
-tag103.onHide(() => {
+tag5.onHide(() => {
     var img = document.getElementById("map_underlay");
     img.style.setProperty("opacity", 0);
 
-    console.log("Tag 103 is now hidden");
+    console.log("Tag 5 is now hidden");
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag103);
+tagManager.addTag(tag5);
 
 
 
 
 
 //make an new tag
-var tag101 = new Tag(101);
+var tag4 = new Tag(4);
 
 // do stuff when it's visible
-tag101.onShow(() => {
+tag4.onShow(() => {
     var img = document.getElementById("map_racial");
     img.style.setProperty("opacity", 0.9);
 
@@ -141,15 +145,15 @@ tag101.onShow(() => {
 });
 
 // do stuff when it's hidden
-tag101.onHide(() => {
+tag4.onHide(() => {
     var img = document.getElementById("map_racial");
     img.style.setProperty("opacity", 0);
 
-    console.log("Tag 101 is now hidden");
+    console.log("Tag 4 is now hidden");
 });
 
 // add this tag to the system that manages all tags
-tagManager.addTag(tag101);
+tagManager.addTag(tag4);
 
 
 

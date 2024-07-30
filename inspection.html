@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+
+    .buttons {
+      margin: 10px 0px;
+    }
+
+    .images {
+      height: 500px;
+      position: relative;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+    }
+
+    #webcam-container {
+        position: absolute;
+        top: 15px;
+        left: 5px;
+    }
+
+    #toggle-webcam {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+
+        .action-card {
+        display: none;
+        font-size: 0.8em;
+        font-family: Montserrat;
+        color: rgb(255, 250, 250);
+        width: 650px;
+        max-height:150px;
+        padding: 10px;
+        margin: 0px;
+        border-spacing:10px;
+        border-radius: 20px;
+        background-color: #000000;
+      }
+
+      .action-card .title {
+        font-size: 1em;
+        font-family: Montserrat;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .scenario-card {
+      display: none; /* Initially hide the card */
+      width: 235px; /* 4:3 aspect ratio width */
+      padding: 10px;
+      margin: 0px auto; /* Center card horizontally */
+      border-radius: 15px; /* Rounded corners */
+      border: 2px solid #ffeb3b; /* Yellow border for emphasis */
+      background-color: #000; /* Black background for strong contrast */
+      color: #fff; /* White text for readability */
+      font-family: Montserrat; /* Helvetica font */
+      box-sizing: border-box; /* Ensures padding and border are included in the total width and height */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */
+      position: relative; /* To ensure proper placement of internal elements */
+      float: left;
+    }
+  
+    .scenario-card.visible {
+      display: block; /* Show the card when the 'visible' class is added */
+    }
+  
+    .scenario-card .title {
+      font-size: 0.7em; /* Larger font size for emphasis */
+      font-weight: 700; /* Bold title for better hierarchy */
+      margin-bottom: 15px; /* Space below title */
+      line-height: 1.2; /* Improved line height for better text spacing */
+      color: #ffeb3b; /* Bright yellow for the title */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Subtle text shadow for readability */
+      border-bottom: 3px solid #ffeb3b; /* Yellow underline for emphasis */
+      padding-bottom: 5px; /* Space between text and underline */
+    }
+  
+    .scenario-card .content {
+      font-size: 0.2em; /* Regular font size for content */
+      line-height: 1.0; /* Improved line height for readability */
+      color: #fff; /* White for content to stand out against black */
+    }
+
+    .sidebar-right {
+      order: -1; /* Ensure left sidebar comes first */
+     width: 420px;
+    padding: 0.5em;
+  }
+    
+  </style>
+</head>
+
+<body>
+
+<div id="container">
+
+    <div id="action-cards">
+      <aside class="sidebar-right">
+        <div class="action-card" id="action-card-1">
+          <div class="title">Which international agreement aims to combat climate change by limiting global warming to below 2 degrees Celsius?</div>
+          <div class="explanation"> 
+            <ul>
+              <li>A Kyoto Protocol</li>
+              <li>B Paris Agreement</li>
+              <li>C Montreal Protocol</li>
+              <li>D Copenhagen Accord</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-2">
+          <div class="title">Name a type of flood caused by the sudden melting of glaciers or ice dams.</div>
+          <div class="explanation"> 
+            <ul>
+              <li>A Flash flood</li>
+              <li>B Coastal flood</li>
+              <li>C Glacial lake outburst flood (GLOF)</li>
+              <li>D River flood</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-3">
+          <div class="title">Which human activity is a major contributor to climate change and subsequent flooding through the release of carbon dioxide?</div>
+          <div class="explanation">
+            <ul>
+              <li>A Deforestation</li>
+              <li>B Agriculture</li>
+              <li>C Burning of fossil fuels</li>
+              <li>D Urbanization</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-4">
+          <div class="title">What natural barrier, often destroyed by human activity, helps protect coastlines from flooding?</div>
+          <div class="explanation">
+            <ul>
+              <li>A Dunes</li>
+              <li>B Mangroves</li>
+              <li>C Rocky cliffs</li>
+              <li>D Forests</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-5">
+          <div class="title">Which process exacerbates coastal flooding by increasing the frequency and intensity of storm surges? </div>
+          <div class="explanation">
+            <ul>
+              <li>A Urbanization</li>
+              <li>B Glacier retreat</li>
+              <li>C Thermal expansion</li>
+              <li>D Deforestation</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-6">
+          <div class="title">What term refers to the large-scale ocean current circulation that redistributes heat and affects global climate patterns?</div>
+          <div class="explanation">
+            <ul>
+              <li>A Jet Stream</li>
+              <li>B Thermohaline circulation</li>
+              <li>C El Niño-Southern Oscillation</li>
+              <li>D Trade Winds</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-7">
+          <div class="title">Which climate phenomenon is characterized by prolonged periods of high temperatures and low precipitation, potentially leading to droughts and subsequent flooding when rain finally comes?</div>
+          <div class="explanation">
+            <ul>
+              <li>A La Niña</li>
+              <li>B Monsoon</li>
+              <li>C Heatwave</li>
+              <li>D El Niño</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-8">
+          <div class="title">What is the primary cause of sea level rise, which contributes to increased coastal flooding?</div>
+          <div class="explanation">
+            <ul>
+              <li>A Melting polar ice caps</li>
+              <li>B Increased precipitation</li>
+              <li>C Higher ocean salinity</li>
+              <li>D Reduced evapotranspiration</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-9">
+          <div class="title">Which region of the world is particularly vulnerable to river flooding due to its vast and heavily populated river basins?</div>
+          <div class="explanation">
+            <ul>
+              <li>A Central Asia</li>
+              <li>B Sub-Saharan Africa</li>
+              <li>C Southeast Asia</li>
+              <li>D Northern Europe</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-10">
+          <div class="title">Which feedback mechanism can lead to more severe flooding by accelerating ice melt and warming in polar regions?</div>
+          <div class="explanation">
+            <ul>
+              <li>A Albedo effect</li>
+              <li>B Carbon sequestration</li>
+              <li>C Ocean acidification</li>
+              <li>D Carbon feedback</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-11">
+          <div class="title">Which type of wetland is especially important for mitigating flood risks by absorbing excess water?</div>
+          <div class="explanation">
+            <ul>
+              <li>A Mangroves</li>
+              <li>B Tundra</li>
+              <li>C Grasslands</li>
+              <li>D Deserts</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-12">
+          <div class="title">What adaptation strategy involves the creation of barriers and levees to protect urban areas from flooding?</div>
+          <div class="explanation">
+            <ul>
+              <li>A Ecosystem-based adaptation</li>
+              <li>B Structural adaptation</li>
+              <li>C Non-structural adaptation</li>
+              <li>D Behavioral adaptation</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-13">
+          <div class="title">What is the process by which water-saturated ground loses strength and stiffness, often leading to landslides and building collapse during flooding?</div>
+          <div class="explanation">
+            <ul>
+              <li>A Sedimentation</li>
+              <li>B Erosion</li>
+              <li>C Liquefaction</li>
+              <li>D Subsidence</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-14">
+          <div class="title">Which international body provides scientific assessments on climate change, including its impact on flooding?</div>
+          <div class="explanation">
+            <ul>
+              <li>A World Meteorological Organization (WMO)</li>
+              <li>B United Nations Environment Programme (UNEP)</li>
+              <li>C Intergovernmental Panel on Climate Change (IPC)</li>
+              <li>D International Union for Conservation of Nature (IUCN)</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-15">
+          <div class="title">Which process contributes to the vertical rise of sea levels by the addition of water from melting ice sheets and glaciers? </div>
+          <div class="explanation">
+            <ul>
+              <li>A Groundwater extraction</li>
+              <li>B Thermal expansion</li>
+              <li>C Ice sheet dynamics</li>
+              <li>D Ocean circulation changes</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-16">
+          <div class="title">What term describes the ability of a system, community, or society to withstand and recover from climate-related impacts, including flooding?</div>
+          <div class="explanation">
+            <ul>
+              <li>A Sustainability</li>
+              <li>B Resilience</li>
+              <li>C Adaptation</li>
+              <li>D Mitigation</li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="action-card" id="action-card-17">
+          <div class="title">Which large-scale atmospheric pattern affects the intensity and frequency of hurricanes, influencing flooding in the Atlantic region?</div>
+          <div class="explanation">
+            <ul>
+              <li>A Pacific Decadal Oscillation</li>
+              <li>B North Atlantic Oscillation</li>
+              <li>C Madden-Julian Oscillation</li>
+              <li>D Atlantic Meridional Overturning Circulation</li>
+            </ul>
+          </div>
+        </div>
+      
+      </div>
+      
+  
+    
+      <div class="action-card" id="action-card-18">
+        <div class="title">What is the primary human-induced cause of the increasing frequency of extreme weather events, including heavy rainfall and flooding?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Land-use change</li>
+            <li>B Deforestation</li>
+            <li>C Greenhouse gas emissions</li>
+            <li>D Urban heat island effect</li>              
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-19">
+        <div class="title">Which ecosystem service provided by wetlands is crucial for reducing the impact of floods?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Carbon sequestration</li>
+            <li>B Water filtration</li>
+            <li>C Habitat provision</li>
+            <li>D Flood regulation</li>               
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-20">
+        <div class="title">Which process involves the gradual sinking of land areas, exacerbating the risk of flooding in coastal and delta regions?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Erosion</li>
+            <li>B Sedimentation</li>
+            <li>C Subsidence</li>
+            <li>D Liquefaction</li>               
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-21">
+        <div class="title">What type of flooding occurs when heavy rainfall exceeds the absorption capacity of the soil, leading to water flowing over the land surface?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Coastal flooding</li>
+            <li>B River flooding</li>
+            <li>C Pluvial flooding</li>
+            <li>D Groundwater flooding</li>               
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-22">
+        <div class="title">Which international framework aims to integrate disaster risk reduction into sustainable development policies and planning?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Kyoto Protocol</li>
+            <li>B Sendai Framework</li>
+            <li>C Paris Agreement</li>
+            <li>D Cancun Adaptation Framework</li>               
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-23">
+        <div class="title">What term describes the projected increase in the frequency and intensity of extreme precipitation events due to climate change?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Hydrological cycle intensification</li>
+            <li>B Climatic oscillation</li>
+            <li>C Precipitation variability</li>
+            <li>D Weather pattern disruption</li>               
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-24">
+        <div class="title">Which approach focuses on restoring natural landscapes to manage flood risks and enhance ecosystem services?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Structural engineering</li>
+            <li>B Climate modeling</li>
+            <li>C Nature-based solutions</li>
+            <li>D Geoengineering</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-25">
+        <div class="title">Which phenomenon occurs when sea water flows into freshwater systems, exacerbating flooding and affecting water quality?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Coastal erosion</li>
+            <li>B Salinization</li>
+            <li>C Eutrophication</li>
+            <li>D Ocean acidification</li>               
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-26">
+        <div class="title">What is the process called where permafrost thaws, releasing stored greenhouse gases and contributing to climate change?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Cryospheric feedback</li>
+            <li>B Thermokarst</li>
+            <li>C Permafrost degradation</li>
+            <li>D Glacier calving</li>               
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-27">
+        <div class="title">Which index measures the relative sea level rise and its impact on coastal areas, considering both natural and anthropogenic factors?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Coastal Vulnerability Index (CVI)</li>
+            <li>B Sea Level Rise Index (SLRI)</li>
+            <li>C Shoreline Change Index (SCI)</li>
+            <li>D Ocean Health Index (OHI)</li>               
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-28">
+        <div class="title">Which type of infrastructure is designed to absorb and manage stormwater, reducing the risk of urban flooding?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Green roofs</li>
+            <li>B Concrete dikes</li>
+            <li>C Retention basins</li>
+            <li>D Seawalls</li> 
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-29">
+        <div class="title">What term refers to the prolonged periods of excessive rainfall leading to saturated ground and increased flood risk?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Hydrological drought</li>
+            <li>B Meteorological drought</li>
+            <li>C Pluvial period</li>
+            <li>D Wet spell</li>                             
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-30">
+        <div class="title">Which region is experiencing increased river flooding due to both glacial melt and changes in precipitation patterns?</div>
+        <div class="explanation"> 
+          <ul>
+            <li>A The Amazon Basin</li>
+            <li>B The Himalayan region</li>
+            <li>C The Sahara Desert</li>
+            <li>D The Great Plains</li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-31">
+        <div class="title">What is the name of the oceanic phenomenon where warm surface waters in the eastern Pacific Ocean cause significant weather changes globally, opposite to El Niño?</div>
+        <div class="explanation">
+          <ul>
+            <li>A La Niña</li>
+            <li>B Southern Oscillation</li>
+            <li>C Pacific Decadal Oscillation</li>
+            <li>D Indian Ocean Dipole</li>                            
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-32">
+        <div class="title">Which layer of the Earth's atmosphere is most affected by the depletion of ozone, which can exacerbate climate change?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Troposphere</li>
+            <li>B Stratosphere</li>
+            <li>C Mesosphere</li>
+            <li>D Thermosphere</li>                           
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-33">
+        <div class="title">Which complex climate phenomenon involves a cycle of variations in the Earth's orbit and axial tilt that influence long-term climate patterns over tens of thousands of years?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Milankovitch cycles</li>
+            <li>B Solar cycles</li>
+            <li>C Volcanic activity cycles</li>
+            <li>D Plate tectonics</li>                           
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-34">
+        <div class="title">What process describes the strengthening of winds around the Antarctic, which can influence the distribution of sea ice and impact global climate systems?</div>
+        <div class="explanation"> 
+          <ul>
+            <li>A Polar vortex intensification</li>
+            <li>B Antarctic circumpolar current acceleration</li>
+            <li>C Southern Hemisphere jet stream shift</li>
+            <li>D Antarctic oscillation</li>                   
+          </ul>
+        </div>
+      </div>
+    
+      <div class="action-card" id="action-card-35">
+        <div class="title">What is the term for a prolonged period of abnormally high ocean temperatures that can lead to widespread coral bleaching and ecosystem damage?</div>
+        <div class="explanation">
+          <ul>
+            <li>A Marine heatwave</li>
+            <li>B Ocean warming event</li>
+            <li>C Thermal anomaly</li>
+            <li>D El Niño</li>                                          
+          </ul>
+        </div>
+      </div>
+    </aside>
+    
+      <div id="scenario-cards">
+
+        <!-- RANDOM GROUP 1 - Weather Events-->
+          <div class="scenario-card scenario-card-random-group-1" id="scenario-card-1">
+        <div class="title">Heavy Storm</div>
+        <div class="explanation">Zones 6, 7, 10, 11 generate no revenue next cycle due to high density impact.</div>
+      </div>
+
+      <div class="scenario-card scenario-card-random-group-1" id="scenario-card-2">
+        <div class="title"> Wind Event</div>
+        <div class="explanation">Zones 6, 7, 10, 11 cannot build anything due to high density impact.</div>
+      </div>
+
+      <div class="scenario-card scenario-card-random-group-1" id="scenario-card-3">
+        <div class="title"> Superstorm Event</div>
+        <div class="explanation"> Zones 1, 2, 4, 5, 8 lose 5 blocks of residential buildings.
+        </div>
+      </div>
+
+        <!-- RANDOM GROUP 2 - Financial Challenges-->
+
+      <div class="scenario-card scenario-card-random-group-2" id="scenario-card-4">
+        <div class="title">Immediate Relief Fund</div>
+        <div class="explanation">No tokens generated this cycle as all are used for immediate relief
+        </div>
+      </div>
+
+      <div class="scenario-card scenario-card-random-group-2" id="scenario-card-5">
+        <div class="title">Financial Crisis </div>
+        <div class="explanation"> All players lose half their tokens
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-2" id="scenario-card-6">
+    <div class="title">Resource Allocation Dilemma </div>
+    <div class="explanation">Players collectively lose 10 tokens. Each player must contribute at least 1 token</div>
+  </div>
+
+
+    <!-- RANDOM GROUP 3 - Infrastructure Failures-->
+  <div class="scenario-card scenario-card-random-group-3" id="scenario-card-7">
+    <div class="title">Infrastructure Failure</div>
+    <div class="explanation">All inland zones lose all public services</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-3" id="scenario-card-8">
+    <div class="title"> Infrastructure Failure 02 </div>
+    <div class="explanation">All shore zones lose all public services.</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-3" id="scenario-card-9">
+    <div class="title">Power Outage </div>
+    <div class="explanation">All inland zones lose all commercial revenue for this round</div>
+  </div>
+
+    <!-- RANDOM GROUP 4 - Public Health and Safety -->
+
+  <div class="scenario-card scenario-card-random-group-4" id="scenario-card-10">
+    <div class="title">Cholera Outbreak </div>
+    <div class="explanation">All inland zones lose 1 Green Infrastructure due to bad maintenance
+    </div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-4" id="scenario-card-11">
+    <div class="title">Cholera Outbreak </div>
+    <div class="explanation">All shore zones lose 1 Green Infrastructure due to bad maintenance</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-4" id="scenario-card-12">
+    <div class="title">Public Health Crisis</div>
+    <div class="explanation">Zones 6, 10, and 13 generate no revenue for the next three rounds and lose one residential building each</div>
+  </div>
+
+    <!-- RANDOM GROUP 5 -->
+
+  <div class="scenario-card scenario-card-random-group-5" id="scenario-card-13">
+    <div class="title">Political Unrest </div>
+    <div class="explanation">The next player skips their turn due to citywide protests</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-5" id="scenario-card-14">
+    <div class="title">Riots </div>
+    <div class="explanation">Department of Sanitation and Department of City Planning skip their next turn</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-5" id="scenario-card-15">
+    <div class="title">Political Turmoil</div>
+    <div class="explanation">MOCEJ and Department of Parks skip their next two turns</div>
+  </div>
+
+    <!-- RANDOM GROUP 6 -->
+
+  <div class="scenario-card scenario-card-random-group-6" id="scenario-card-16">
+    <div class="title">Toxic Spill</div>
+    <div class="explanation">All Green Infrastructure in Zone 8,10 and 12 is contaminated and unusable. Players must use actions to clean up (demolish and rebuild) the spill before building new infrastructure</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-6" id="scenario-card-17">
+    <div class="title">Contaminated Water Supply</div>
+    <div class="explanation"> Zones 2, 6, and 12 face water contamination issues. All emergency services in these zones become non-functional for the next three rounds.</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-6" id="scenario-card-18">
+    <div class="title">Wildfire</div>
+    <div class="explanation">Zones 3, 5, and 11 have all parks and residential buildings destroyed. Players must rebuild these zones completely.</div>
+  </div>
+
+  <!-- RANDOM GROUP 7 -->
+
+  <div class="scenario-card scenario-card-random-group-7" id="scenario-card-19">
+    <div class="title">Wall Failure</div>
+    <div class="explanation">A wall barrier fails. Draw an additional flood card for this zone and spend 3 tokens to repair the wall, or the zone remains unprotected.</div>
+  </div>
+
+
+  <div class="scenario-card scenario-card-random-group-7" id="scenario-card-20">
+    <div class="title">Emergency Wall Construction</div>
+    <div class="explanation">Players must collectively build a wall barrier in Zone 2 within two rounds. If not completed, draw an additional flood card for Zone 2 each round until it is built.</div>
+  </div>
+
+  <div class="scenario-card scenario-card-random-group-7" id="scenario-card-21">
+    <div class="title">Reinforcement Required</div>
+    <div class="explanation">Players must reinforce an existing wall in Zone 16 by spending 2 tokens per player. If not reinforced, the wall will breach, and the zone will flood.</div>
+  </div>
+
+  <!-- RANDOM GROUP 8 -->
+
+<div class="scenario-card scenario-card-random-group-8" id="scenario-card-22">
+  <div class="title">Economic Downturn</div>
+  <div class="explanation">All players lose 3 tokens due to a sudden economic downturn affecting the city’s revenue.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-8" id="scenario-card-23">
+  <div class="title">Tax Increase</div>
+  <div class="explanation">Players must pay an additional 2 tokens each due to a new tax increase. Failure to do so results in a penalty of losing one action this round.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-8" id="scenario-card-24">
+  <div class="title">Forced Relocation</div>
+  <div class="explanation">Due to safety concerns, move all residential buildings from Zones 2,5 and 9 to other zones. These buildings cannot generate revenue during the relocation process.</div>
+</div>
+
+<!-- RANDOM GROUP 9 -->
+
+<div class="scenario-card scenario-card-random-group-9" id="scenario-card-25">
+  <div class="title">Environmental Hazard</div>
+  <div class="explanation">A hazardous material spill occurs in Zone 3. Players must spend 4 tokens to clean it up or face reduced revenue from this zone for the next two rounds.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-9" id="scenario-card-26">
+  <div class="title">Climate Change Initiative</div>
+  <div class="explanation">Players receive 3 tokens each for investing in climate change mitigation efforts. However, zones with high pollution levels will experience reduced income this cycle.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-9" id="scenario-card-27">
+  <div class="title">Wildlife Conservation</div>
+  <div class="explanation">A new wildlife conservation area is set up in Zone 5. All players must contribute 2 tokens each to maintain this area or suffer a penalty of losing 1 token per round until contributions are made.</div>
+</div>
+
+<!-- RANDOM GROUP 10 -->
+
+<div class="scenario-card scenario-card-random-group-10"id="scenario-card-28">
+  <div class="title">Transport Strike</div>
+  <div class="explanation">A transport strike disrupts deliveries. All players lose 2 tokens and face delays in infrastructure projects for the next round.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-10" id="scenario-card-29">
+  <div class="title">Supply Chain Issue</div>
+  <div class="explanation">Due to a supply chain issue, players must spend 3 tokens to procure necessary materials. Failure to do so results in halted construction projects for this round.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-10" id="scenario-card-30">
+  <div class="title">Logistics Improvement</div>
+  <div class="explanation">Players receive a bonus of 2 tokens each due to improvements in logistics. Additionally, all infrastructure projects proceed faster this round.</div>
+</div>
+
+<!-- RANDOM GROUP 11 -->
+
+<div class="scenario-card scenario-card-random-group-11" id="scenario-card-31">
+  <div class="title">Community Rally</div>
+  <div class="explanation">A community rally boosts morale and funding. All players receive 2 bonus action this round.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-11" id="scenario-card-32">
+  <div class="title">Public Support Boost</div>
+  <div class="explanation">Public support increases. Each player receives 3 additional tokens and has reduced costs by 1 token for infrastructure upgrades this round.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-11" id="scenario-card-33">
+  <div class="title">Volunteer Program</div>
+  <div class="explanation">A new volunteer program is initiated. All players gain 2 tokens and can use one free action this round to complete any ongoing projects.</div>
+</div>
+
+<!-- RANDOM GROUP 12 -->
+
+<div class="scenario-card scenario-card-random-group-12" id="scenario-card-34">
+  <div class="title">Stormwater overflows</div>
+  <div class="explanation">Zone 11 has been flooded</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-12" id="scenario-card-35">
+  <div class="title">Stormwater overflows</div>
+  <div class="explanation">Zone 7 has been flooded</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-12" id="scenario-card-36">
+  <div class="title">Stormwater overflows</div>
+  <div class="explanation">Zone 14 has been flooded</div>
+</div>
+
+<!-- RANDOM GROUP 13 -->
+
+<div class="scenario-card scenario-card-random-group-13" id="scenario-card-37">
+  <div class="title">Economic Downturn</div>
+  <div class="explanation">All commercial buildings generate half their usual revenue for the next three rounds.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-13" id="scenario-card-38">
+  <div class="title">Financial Meltdown</div>
+  <div class="explanation">All players lose half their tokens immediately.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-13" id="scenario-card-39">
+  <div class="title">Budget Cut </div>
+  <div class="explanation">All players lose 2 tokens due to budget cuts.</div>
+</div>
+
+<!-- RANDOM GROUP 14 -->
+
+<div class="scenario-card scenario-card-random-group-14" id="scenario-card-40">
+  <div class="title">Superstorm Surge</div>
+  <div class="explanation">Draw 5 additional flood cards and apply their effects immediately. </div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-14" id="scenario-card-41">
+  <div class="title">Environmental Disaster</div>
+  <div class="explanation">An environmental disaster affects Zones 1, 8, and 15, destroying all parks and public services in these zones. These zones must be rebuilt from scratch.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-14" id="scenario-card-42">
+  <div class="title">Flood Zone Expansion</div>
+  <div class="explanation">o	Due to extreme weather, the flood zone expands. Draw an additional flood card each round for the next three rounds.</div>
+</div>
+
+<!-- RANDOM GROUP 15 -->
+
+<div class="scenario-card scenario-card-random-group-15" id="scenario-card-43">
+  <div class="title">Wall Expansion Project</div>
+  <div class="explanation">The city initiates a wall expansion project. For the next three rounds, players can build wall barriers at a reduced cost of 2 tokens instead of 3.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-15" id="scenario-card-44">
+  <div class="title">Wall Maintenance Crisis</div>
+  <div class="explanation">o	Lack of maintenance leads to weakening wall barriers in Zones 2 and 8. Spend 1 token per player to maintain these walls, or they will fail in the next flood event.</div>
+</div>
+
+<div class="scenario-card scenario-card-random-group-15" id="scenario-card-45">
+  <div class="title">Wall Inspection</div>
+  <div class="explanation">An inspection reveals weaknesses in all wall barriers. Players must spend 1 token per wall barrier on the board to ensure their integrity, or they risk failure of losing all in the next flood event.</div>
+</div>
+    </div>    
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+<div id="toggle-webcam"><button onclick="toggleWebcamContainer()">👁️👁️</button></div>
+<div id="webcam-container" style="display:inside;">
+    <video id="webcam_canvas" playsinline autoplay style="display:inside"></video>
+    <canvas id="out_canvas"></canvas>
+</div>
+
+</body>
+
+<script src="apriltags\apriltagjs\start_video.js" async></script>
+<script src="apriltags\apriltagjs\on_tag_logic.js"></script>
+<script type="module" src="apriltags\apriltagjs\video_process.js" async></script>
+
+<script>
+
+// create a tagManager
+const tagManager = new TagManager();
+
+function toggleWebcamContainer() {
+    var container = document.getElementById('webcam-container');
+    if(container.style.getPropertyValue("opacity") == 1 || container.style.getPropertyValue("opacity") == "") {
+
+        container.style.setProperty("opacity", 0);
+
+    } else {
+        container.style.setProperty("opacity", 1);
+
+    }
+}
+//////////////////
+/// CHANGE CODE BELOW
+//////////////////
+//////////////////
+//////////////////
+//////////////////
+//////////////////
+
+
+
+
+
+
+
+//make an new tag
+var tag16 = new Tag(16);
+var tag17= new Tag(17);
+var tag18 = new Tag(18);
+var tag19 = new Tag(19);
+var tag20 = new Tag(20);
+var tag21 = new Tag(21);
+var tag22 = new Tag(22);
+var tag23 = new Tag(23);
+var tag24 = new Tag(24);
+var tag25 = new Tag(25);
+var tag26 = new Tag(26);
+var tag27 = new Tag(27);
+var tag28 = new Tag(28);
+var tag29 = new Tag(29);
+var tag30 = new Tag(30);
+var tag31 = new Tag(31);
+var tag32 = new Tag(32);
+var tag33 = new Tag(33);
+var tag34 = new Tag(34);
+var tag35 = new Tag(35);
+var tag36 = new Tag(36);
+var tag37 = new Tag(37);
+var tag38 = new Tag(38);
+var tag39 = new Tag(39);
+var tag40 = new Tag(40);
+var tag41 = new Tag(41);
+var tag42 = new Tag(42);
+var tag43 = new Tag(43);
+var tag44 = new Tag(44);
+var tag45 = new Tag(45);
+var tag46 = new Tag(46);
+var tag47 = new Tag(47);
+var tag48 = new Tag(48);
+var tag49 = new Tag(49);
+var tag50 = new Tag(50);
+var tag51 = new Tag(50);
+
+// do stuff when it's visible
+tag16.onShow(() => {
+    var actionCards = document.getElementById("action-card-6")
+    actionCards.style.setProperty("display", "block");
+
+    console.log("Question 6 (tag16) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+
+// do stuff when it's hidden
+tag16.onHide(() => {
+    var actionCards = document.getElementById("action-card-6")
+    actionCards.style.setProperty("display", "none");
+
+    console.log("Question 6 (tag16) is now hidden");
+});
+
+tag17.onShow(() => {
+    var actionCards = document.getElementById("action-card-5")
+    console.log("Question 5 (tag17) is now visible");
+    actionCards.style.setProperty("display", "block");
+
+});
+tag17.onHide(() => {
+    var actionCards = document.getElementById("action-card-5")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 5 (tag17) is now hidden");
+});
+
+tag18.onShow(() => {
+    var actionCards = document.getElementById("action-card-4")
+    console.log("Question 4 (tag18) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag18.onHide(() => {
+    var actionCards = document.getElementById("action-card-4")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 4 (tag18) is now hidden");
+});
+
+tag19.onShow(() => {
+    var actionCards = document.getElementById("action-card-3")
+    console.log("Question 3 (tag19) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag19.onHide(() => {
+    var actionCards = document.getElementById("action-card-3")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 3 (tag19) is now hidden");
+});
+
+tag20.onShow(() => {
+    var actionCards = document.getElementById("action-card-2")
+    console.log("Question 2 (tag20) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag20.onHide(() => {
+    var actionCards = document.getElementById("action-card-2")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 2 (tag20) is now hidden");
+});
+
+tag21.onShow(() => {
+    var actionCards = document.getElementById("action-card-1")
+    console.log("Question 1 (tag21) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag21.onHide(() => {
+    var actionCards = document.getElementById("action-card-1")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 1 (tag21) is now hidden");
+});
+
+tag22.onShow(() => {
+    var actionCards = document.getElementById("action-card-6")
+    console.log("Question 6 (tag22) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag22.onHide(() => {
+    var actionCards = document.getElementById("action-card-6")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 6 (tag22) is now hidden");
+});
+
+tag23.onShow(() => {
+    var actionCards = document.getElementById("action-card-11")
+    console.log("Question 11 (tag23) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag23.onHide(() => {
+    var actionCards = document.getElementById("action-card-11")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 11 (tag23) is now hidden");
+});
+
+tag24.onShow(() => {
+    var actionCards = document.getElementById("action-card-10")
+    console.log("Question 10 (tag24) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag24.onHide(() => {
+    var actionCards = document.getElementById("action-card-10")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 10 (tag24) is now hidden");
+});
+// Tag 25
+tag25.onShow(() => {
+    var actionCards = document.getElementById("action-card-9");
+    console.log("Question 9 (tag25) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag25.onHide(() => {
+    var actionCards = document.getElementById("action-card-9");
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 9 (tag25) is now hidden");
+});
+
+// Tag 26
+tag26.onShow(() => {
+    var actionCards = document.getElementById("action-card-8");
+    console.log("Question 8 (tag26) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag26.onHide(() => {
+    var actionCards = document.getElementById("action-card-8");
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 8 (tag26) is now hidden");
+});
+
+// Tag 27
+tag27.onShow(() => {
+    var actionCards = document.getElementById("action-card-7");
+    console.log("Question 7 (tag27) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag27.onHide(() => {
+    var actionCards = document.getElementById("action-card-7");
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 7 (tag27) is now hidden");
+});
+
+// Tag 28
+tag28.onShow(() => {
+    var actionCards = document.getElementById("action-card-17");
+    console.log("Question 17 (tag28) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag28.onHide(() => {
+    var actionCards = document.getElementById("action-card-17");
+    console.log("Question 17 (tag28) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 29
+tag29.onShow(() => {
+    var actionCards = document.getElementById("action-card-16");
+    console.log("Question 16 (tag29) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag29.onHide(() => {
+    var actionCards = document.getElementById("action-card-16");
+    console.log("Question 16 (tag29) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 30
+tag30.onShow(() => {
+    var actionCards = document.getElementById("action-card-15");
+    console.log("Question 15 (tag30) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag30.onHide(() => {
+    var actionCards = document.getElementById("action-card-15");
+    console.log("Question 15 (tag30) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+// Tag 31
+tag31.onShow(() => {
+    var actionCards = document.getElementById("action-card-14");
+    console.log("Question 14 (tag31) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag31.onHide(() => {
+    var actionCards = document.getElementById("action-card-14");
+    console.log("Question 14 (tag31) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 32
+tag32.onShow(() => {
+    var actionCards = document.getElementById("action-card-13");
+    console.log("Question 13 (tag32) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag32.onHide(() => {
+    var actionCards = document.getElementById("action-card-13");
+    console.log("Question 13 (tag32) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 33
+tag33.onShow(() => {
+    var actionCards = document.getElementById("action-card-12");
+    console.log("Question 12 (tag33) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag33.onHide(() => {
+    var actionCards = document.getElementById("action-card-12");
+    console.log("Question 12 (tag33) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 34
+tag34.onShow(() => {
+    var actionCards = document.getElementById("action-card-23");
+    console.log("Question 23 (tag34) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag34.onHide(() => {
+    var actionCards = document.getElementById("action-card-23");
+    console.log("Question 23 (tag34) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 35
+tag35.onShow(() => {
+    var actionCards = document.getElementById("action-card-22");
+    console.log("Question 22 (tag35) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag35.onHide(() => {
+    var actionCards = document.getElementById("action-card-22");
+    console.log("Question 22 (tag35) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 36
+tag36.onShow(() => {
+    var actionCards = document.getElementById("action-card-21");
+    console.log("Question 21 (tag36) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag36.onHide(() => {
+    var actionCards = document.getElementById("action-card-21");
+    console.log("Question 21 (tag36) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 37
+tag37.onShow(() => {
+    var actionCards = document.getElementById("action-card-20");
+    console.log("Question 20 (tag37) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag37.onHide(() => {
+    var actionCards = document.getElementById("action-card-20");
+    console.log("Question 20 (tag37) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 38
+tag38.onShow(() => {
+    var actionCards = document.getElementById("action-card-19");
+    console.log("Question 19 (tag38) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag38.onHide(() => {
+    var actionCards = document.getElementById("action-card-19");
+    console.log("Question 19 (tag38) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 39
+tag39.onShow(() => {
+    var actionCards = document.getElementById("action-card-18");
+    console.log("Question 18 (tag39) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag39.onHide(() => {
+    var actionCards = document.getElementById("action-card-18");
+    console.log("Question 18 (tag39) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 40
+tag40.onShow(() => {
+    var actionCards = document.getElementById("action-card-29");
+    console.log("Question 29 (tag40) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag40.onHide(() => {
+    var actionCards = document.getElementById("action-card-29");
+    console.log("Question 29 (tag40) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 41
+tag41.onShow(() => {
+    var actionCards = document.getElementById("action-card-28");
+    console.log("Question 28 (tag41) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag41.onHide(() => {
+    var actionCards = document.getElementById("action-card-28");
+    console.log("Question 28 (tag41) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 42
+tag42.onShow(() => {
+    var actionCards = document.getElementById("action-card-27");
+    console.log("Question 27 (tag42) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag42.onHide(() => {
+    var actionCards = document.getElementById("action-card-27");
+    console.log("Question 27 (tag42) is now visible");
+    actionCards.style.setProperty("display", "none");;
+});
+
+// Tag 43
+tag43.onShow(() => {
+    var actionCards = document.getElementById("action-card-26");
+    console.log("Question 26 (tag43) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag43.onHide(() => {
+    var actionCards = document.getElementById("action-card-26");
+    console.log("Question 26 (tag43) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 44
+tag44.onShow(() => {
+    var actionCards = document.getElementById("action-card-28");
+    console.log("Question 28 (tag44) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag44.onHide(() => {
+    var actionCards = document.getElementById("action-card-28");
+    for (let i = 0; i < actionCards.length; i++) {
+        actionCards[i].style.setProperty("opacity", 0);
+    }
+    console.log("Question 28 (tag44) is now hidden");
+});
+
+// Tag 45
+tag45.onShow(() => {
+    var actionCards = document.getElementById("action-card-24");
+    console.log("Question 24 (tag45) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag45.onHide(() => {
+    var actionCards = document.getElementById("action-card-24")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 24 (tag45) is now hidden");
+});
+
+// Tag 46
+tag46.onShow(() => {
+    var actionCards = document.getElementById("action-card-35");
+    console.log("Question 35 (tag46) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag46.onHide(() => {
+    var actionCards = document.getElementById("action-card-35")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 35 (tag46) is now hidden");
+});
+
+// Tag 47
+tag47.onShow(() => {
+    var actionCards = document.getElementById("action-card-34");
+    console.log("Question 34 (tag47) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag47.onHide(() => {
+    var actionCards = document.getElementById("action-card-34")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 34 (tag46) is now hidden");
+});
+
+// Tag 48
+tag48.onShow(() => {
+    var actionCards = document.getElementById("action-card-33");
+    console.log("Question 33 (tag48) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag48.onHide(() => {
+    var actionCards = document.getElementById("action-card-33");
+    console.log("Question 33 (tag48) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 49
+tag49.onShow(() => {
+    var actionCards = document.getElementById("action-card-32");
+    console.log("Question 32 (tag49) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag49.onHide(() => {
+    var actionCards = document.getElementById("action-card-32");
+    console.log("Question 32 (tag49) is now visible");
+    actionCards.style.setProperty("display", "none");
+});
+
+// Tag 50
+tag50.onShow(() => {
+    var actionCards = document.getElementById("action-card-34");
+    console.log("Question 34 (tag50) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag50.onHide(() => {
+    var actionCards = document.getElementById("action-card-34");
+    for (let i = 0; i < actionCards.length; i++) {
+        actionCards[i].style.setProperty("opacity", 0);
+    }
+    console.log("Question 34 (tag50) is now hidden");
+});
+
+// Tag 51
+tag51.onShow(() => {
+    var actionCards = document.getElementById("action-card-7");
+    console.log("Question 7 (tag51) is now visible");
+    actionCards.style.setProperty("display", "block");
+});
+tag51.onHide(() => {
+    var actionCards = document.getElementById("action-card-7")
+    actionCards.style.setProperty("display", "none");
+    console.log("Question 7 (tag51) is now hidden");
+});
+
+  
+// add this tag to the system that manages all tags
+tagManager.addTag(tag16);
+// Assuming tagManager and tags 17 through 51 are already defined
+
+tagManager.addTag(tag17);
+tagManager.addTag(tag18);
+tagManager.addTag(tag19);
+tagManager.addTag(tag20);
+tagManager.addTag(tag21);
+tagManager.addTag(tag22);
+tagManager.addTag(tag23);
+tagManager.addTag(tag24);
+tagManager.addTag(tag25);
+tagManager.addTag(tag26);
+tagManager.addTag(tag27);
+tagManager.addTag(tag28);
+tagManager.addTag(tag29);
+tagManager.addTag(tag30);
+tagManager.addTag(tag31);
+tagManager.addTag(tag32);
+tagManager.addTag(tag33);
+tagManager.addTag(tag34);
+tagManager.addTag(tag35);
+tagManager.addTag(tag36);
+tagManager.addTag(tag37);
+tagManager.addTag(tag38);
+tagManager.addTag(tag39);
+tagManager.addTag(tag40);
+tagManager.addTag(tag41);
+tagManager.addTag(tag42);
+tagManager.addTag(tag43);
+tagManager.addTag(tag44);
+tagManager.addTag(tag45);
+tagManager.addTag(tag46);
+tagManager.addTag(tag47);
+tagManager.addTag(tag48);
+tagManager.addTag(tag49);
+tagManager.addTag(tag50);
+tagManager.addTag(tag51);
+
+//make an new tag
+var tag00 = new Tag(0);
+
+// do stuff when it's visible
+tag00.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-1");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag00.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-1");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag00);
+
+//make an new tag
+var tag01 = new Tag(1);
+
+// do stuff when it's visible
+tag01.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-2");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag01.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-2");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag01);
+
+//make an new tag
+var tag02 = new Tag(2);
+
+// do stuff when it's visible
+tag02.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-3");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag02.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-3");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag02);
+
+//make an new tag
+var tag03 = new Tag(3);
+
+// do stuff when it's visible
+tag03.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-4");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag03.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-4");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag03);
+
+//make an new tag
+var tag04 = new Tag(4);
+
+// do stuff when it's visible
+tag04.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-5");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag04.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-5");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag04);
+
+//make an new tag
+var tag05 = new Tag(5);
+
+// do stuff when it's visible
+tag05.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-6");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag05.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-6");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag05);
+
+//make an new tag
+var tag06 = new Tag(6);
+
+// do stuff when it's visible
+tag06.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-7");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag06.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-7");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag06);
+
+//make an new tag
+var tag07 = new Tag(7);
+
+// do stuff when it's visible
+tag07.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-8");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag07.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-8");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag07);
+
+//make an new tag
+var tag08 = new Tag(8);
+
+// do stuff when it's visible
+tag08.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-9");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag08.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-9");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag08);
+
+
+//make an new tag
+var tag09 = new Tag(9);
+
+// do stuff when it's visible
+tag09.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-10");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag09.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-10");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag09);
+
+//make an new tag
+var tag10 = new Tag(10);
+
+// do stuff when it's visible
+tag10.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-11");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag10.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-11");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag10);
+
+//make an new tag
+var tag11 = new Tag(11);
+
+// do stuff when it's visible
+tag11.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-12");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag11.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-12");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag11);
+
+//make an new tag
+var tag12 = new Tag(12);
+
+// do stuff when it's visible
+tag12.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-13");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag12.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-13");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag12);
+
+//make an new tag
+var tag13 = new Tag(13);
+
+// do stuff when it's visible
+tag13.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-14");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag13.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-14");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag13);
+
+//make an new tag
+var tag14 = new Tag(14);
+
+// do stuff when it's visible
+tag14.onShow(() => {
+
+
+      // get divs with a given class name and put it in a variable / array (called 'scenarioCards')
+      var scenarioCards = document.getElementsByClassName("scenario-card-random-group-15");
+
+      // get a random integer between 0 and (the length of scenario cards)
+      var randomIndex = Math.floor(Math.random() * scenarioCards.length);
+
+
+      // Hide all scenario cards first
+      Array.from(scenarioCards).forEach(function (card) {
+        card.style.display = "none";
+      });
+
+      // Show the randomly picked scenario card
+      scenarioCards[randomIndex].style.display = "block";
+
+});
+
+// do stuff when it's hidden
+tag14.onHide(() => {
+
+
+    // get divs with a given class name and put it in a variable (called 'scenarioCards')
+    var scenarioCards = document.getElementsByClassName("scenario-card-random-group-15");
+    
+    // Hide all action cards
+    Array.from(scenarioCards).forEach(function (card) {
+      card.style.display = "none";
+    });
+
+});
+tagManager.addTag(tag14);
+
+
+//make an new tag
+var tag15 = new Tag(15);
+
+// do stuff when it's visible
+tag15.onShow(() => {
+    var scenarioCard = document.getElementById("scenario-card-16")
+    scenarioCard.style.setProperty("display", "block");
+
+    console.log("tag15 is now visible");
+});
+
+// do stuff when it's hidden
+tag15.onHide(() => {
+    var scenarioCard = document.getElementById("scenario-card-16")
+    scenarioCard.style.setProperty("display", "none");
+
+    console.log("tag15 is now hidden");
+});
+
+// add this tag to the system that manages all tags
+tagManager.addTag(tag15);
+
+//////////////////
+//☆*: .｡. o(≧▽≦)o .｡.:*☆//
+////THIS IS VICKY HERE ///
+///hiiiiiiiiiiiiiiiiiii///
+//☆*: .｡. o(≧▽≦)o .｡.:*☆//
+//////////////////
+
+
+//////////////////
+//FInished all the trivia cards! //
+///CHANGE CODE ABOVE
+//////////////////
+
+function processDetections(tags) {
+    tagManager.updateTags(tags);
+}
+
+
+</script>
+
+
+</body>
+</html>
