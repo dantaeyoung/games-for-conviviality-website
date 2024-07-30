@@ -6,83 +6,113 @@
     <title>Crisis Rises Game Page</title>
     <link rel="stylesheet" href="layout.css">
     <style>
-        .indivdocu {
-        font-size: 1.5em;
-        position: relative;
- justify-content: center;
-        font-family: Montserrat;
-        color: #ffffff;
-        padding: 10px;
-        margin: 10px;
-        border-spacing:10px;
-        border-radius: 20px;
-        background-color: #000000;
-        font-weight: bold;
-      }
-      .groupdocu {
-        font-size: 1.3em;
-        position: relative;
-        text-align: left;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #000542;
-        width: 700px;
-        padding: 20px;
-        margin: 10px;
-        border-spacing:10px;
-        border-radius: 20px;
-      }
-      .imageandtext {
-        font-size: 1.2em;
-        font-family: Montserrat;
-        color: rgb(255, 250, 250);
-        padding: 10px;
-        margin: 30px;
-        border-spacing:10px;
-        border-radius: 20px;
-        background-color: #000000;
-      }
-
+        a {
+            display: inline-block;
+            margin: 20px 0;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 40px auto; /* Added margin-top for spacing */
+        }
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover; /* Ensures images fill the container */
+        }
+        .imageandtext {
+            font-size: 1.2em;
+            font-family: Montserrat, sans-serif;
+            color: #ffffff;
+            background-color: #000000;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .video-container {
+            grid-column: span 2;
+            text-align: center;
+        }
+        .gallery-item img, .gallery-item video {
+            aspect-ratio: 16 / 9; /* Adjust the aspect ratio as needed */
+        }
     </style>
 </head>
 <body>
     <header>
         <h1><i>CRISIS RISES FINAL PLAYTEST</i></h1>
-        <h2> Documentation of the Final Playtest for Crisis Rises </h2>
-        <a href="gamedocumentation.html">I want to go Back!</a>
-        <br>
-        <br>
-        <br>
-            <div class="images">
-                <img src="Imagesforplaytest/20240724_184755.jpg" />    
-        </div>
-        <div class="imageandtext">
-            setting up the gameboard 
+        <h2>Documentation of the Final Playtest for Crisis Rises</h2>
+        <a href="gamedocumentation.html">I want to go Back!</a><br><br>
+    </header>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="Imagesforplaytest/20240724_184755.jpg" alt="Game Setup Image 1"/>
+            <div class="imageandtext">Setting up the gameboard</div>
         </div>
 
-        <div class="images">
-            <img src="Imagesforplaytest/imaged.jpg"/>    
-    </div>
-    <div class="imageandtext">
-        setting up the gameboard pt 2
+        <div class="gallery-item">
+            <img src="Imagesforplaytest/imaged.jpg" alt="Game Setup Image 2"/>
+            <div class="imageandtext">Setting up the gameboard pt 2</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Imagesforplaytest/20240724_180252.jpg" alt="Game Setup with Screen"/>
+            <div class="imageandtext">Setup with screen</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Imagesforplaytest/20240724_180252.jpg" alt="Game Setup with Screen"/>
+            <div class="imageandtext">Setup with screen</div>
+        </div>
+
+        <div class="video-container gallery-item">
+            <video controls>
+                <source src="Imagesforplaytest/20240724_200127.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="imageandtext">Apriltags in motion (ft. Lydia!)</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Imagesforplaytest/image.png" alt="Winstate Image"/>
+            <div class="imageandtext">Is this really a winstate?</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Imagesforplaytest/image.png" alt="Winstate Image"/>
+            <div class="imageandtext">Is this really a winstate?</div>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="Imagesforplaytest/20240724_180252.jpg" alt="Game Setup with Screen"/>
+            <div class="imageandtext">Setup with screen</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Imagesforplaytest/20240724_180252.jpg" alt="Game Setup with Screen"/>
+            <div class="imageandtext">Setup with screen</div>
+        </div>
+
     </div>
 
-        <div class="images">
-            <img src="Imagesforplaytest/20240724_180252.jpg" />    
-    </div>
-    <div class="imageandtext">
-        setup with screen
-    </div>
 
-    <div class="images">
-        <video src="Imagesforplaytest/20240724_200127.mp4">    
-</div>
-<div class="imageandtext">
-    apriltags in motion (ft. Lydia!)
-</div>
 
-<div class="images">
-    <img src="Imagesforplaytest/image.png" />    
-</div>
-<div class="imageandtext">
-is this really a winstate?
-</div>
+</body>
+</html>
