@@ -1,0 +1,301 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px; /* Space below the header */
+    padding: 20px; /* Padding for spacing within header */
+    border-bottom: 2px solid #333; /* Thin line to separate header from cards */
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em; /* Larger font size for main title */
+    margin: 0 0 10px; /* Space below the title */
+    color: #333; /* Dark color for the title */
+    font-weight: bold; /* Bold for emphasis */
+    text-align: center;
+}
+
+header p {
+    font-size: 1.4em; /* Slightly larger font size for description */
+    color: #555; /* Lighter color for description */
+    line-height: 1.6; /* Line height for readability */
+    margin: 0; /* Remove margin for better alignment */
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Space between cards */
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 300px; /* Width of each card */
+    height: 400px; /* Height of each card */
+    perspective: 1000px;
+    position: relative;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    cursor: pointer;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+/* Front card styling */
+.card-front {
+    background: #333;
+    color: #f7f700;
+    border: 1px solid #444;
+    text-align: center;
+    z-index: 2;
+}
+
+.card-front h2 {
+    font-size: 2em;
+    margin: 0;
+    color: #f7f700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card-front h3 {
+    font-size: 1.6em;
+    margin: 15px 0;
+    color: #f7f700;
+}
+
+.card-front p {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #ffffff;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Back card styling */
+.card-back {
+    background: #f7f700;
+    color: #333;
+    border: 1px solid #444;
+    text-align: center;
+    padding: 30px;
+    font-size: 1.1em;
+    transform: rotateY(180deg);
+}
+
+.card-back h2 {
+    font-size: 2.2em;
+    margin: 0;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card-back p {
+    margin-top: 15px;
+    color: #333;
+    line-height: 1.7;
+    font-size: 1.1em;
+}
+
+/* Arrow styles */
+.arrow {
+    width: 50px;
+    height: 50px;
+    border: solid 3px #333;
+    border-width: 3px 3px 0 0;
+    transform: rotate(45deg);
+    margin: 0 30px;
+    align-self: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .arrow {
+        display: none;
+    }
+}
+
+/* Diagram Container */
+.diagram-container {
+    width: 90%; /* Adjust width as needed */
+    max-width: 1200px; /* Maximum width of container */
+    margin: 40px auto; /* Center container with margin */
+    text-align: center;
+}
+
+.diagram-container header {
+    margin-bottom: 30px; /* Space below header */
+}
+
+.diagram-container header h2 {
+    font-size: 2.5em; /* Font size for header */
+    color: #333; /* Dark color for the header */
+    border-bottom: 2px solid #333; /* Line under header */
+    padding-bottom: 10px; /* Padding for bottom line */
+}
+
+.diagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Space between grid items */
+    margin-top: 20px; /* Margin above grid */
+}
+
+.diagram-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    background: #f7f700;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step-content {
+    flex: 1; /* Take up the remaining space */
+}
+
+.step-content h3 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+.step-content p {
+    font-size: 1.1em;
+    margin-top: 5px;
+    color: #555;
+    line-height: 1.6;
+
+}
+
+/* Diagram Container */
+.diagram-container {
+    width: 100%; /* Adjust width as needed */
+    max-width: 1600px; /* Maximum width of container */
+    margin: 40px auto; /* Center container with margin */
+    text-align: center;
+}
+
+.diagram-container header {
+    margin-bottom: 40px; /* Increased space below header for better separation */
+}
+
+.diagram-container header h2 {
+    font-size: 2.5em; /* Font size for header */
+    color: #333; /* Dark color for the header */
+    border-bottom: 2px solid #333; /* Line under header */
+    padding-bottom: 10px; /* Padding for bottom line */
+}
+
+.diagram-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+    gap: 30px; /* Space between grid items */
+    margin-top: 20px; /* Margin above grid */
+}
+
+.diagram-step {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    gap: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: row; /* Ensure items are in a row */
+}
+
+.step-number {
+    font-size: 2.5em; /* Increased font size for visibility */
+    font-weight: bold;
+    color: #333;
+    background: #f7f700;
+    border-radius: 50%;
+    width: 70px; /* Slightly larger number circle */
+    height: 70px; /* Slightly larger number circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step-content {
+    flex: 1; /* Take up the remaining space */
+    text-align: left; /* Align text to the left */
+}
+
+.step-content h3 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+.step-content p {
+    font-size: 1.2em; /* Slightly larger font size for readability */
+    margin-top: 10px; /* Increased margin for better spacing */
+    color: #555;
+    line-height: 1.6;
+}
+
+
