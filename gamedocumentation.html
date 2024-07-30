@@ -6,76 +6,177 @@
     <title>Crisis Rises Game Page</title>
     <link rel="stylesheet" href="layout.css">
     <style>
-        .indivdocu {
-        font-size: 1.5em;
-        position: relative;
- justify-content: center;
-        font-family: Montserrat;
+        /* Container for Sections */
+        .rounded-rectangle {
+            border: 2px dashed black;
+            padding: 20px;
+            border-radius: 25px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left; /* Left-align text for better readability */
+        }
+
+        .groupdocu, .indivdocu {
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 25px;
+            background-color: #ffffff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            max-width: 1200px;
+            border: 2px dashed black;
+            text-align: left; /* Left-align text for better readability */
+        }
+
+        /* Two-Column Layout */
+        .text-image-container {
+            display: flex;
+            gap: 20px;
+            margin: 30px auto;
+            max-width: 1200px;
+            align-items: stretch; /* Align items to the same height */
+            flex-wrap: wrap;
+        }
+
+        .text-column {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .image-column {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-column img {
+            width: 100%;
+            max-width: 500px; /* Restrict maximum image width */
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+
+
+      /* Individual Documentation Styles */
+      .indivdocu {
+        font-size: 1.2em;
         color: #ffffff;
-        padding: 10px;
-        margin: 10px;
-        border-spacing:10px;
-        border-radius: 20px;
-        background-color: #000000;
+        background-color:none;
+        padding: 30px;
+        text-align: center;
+        margin: 30px auto;
+        max-width: 1200px;
+    }
+
+    .indivdocu h3 {
+        margin-bottom: 20px;
+        color: #0f0f0f;
+    }
+
+
+    .indivdocu .button-container a {
+        display: inline-block;
+        background-color: #f7f700;
+        color: #000000;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 15px;
         font-weight: bold;
-      }
-      .groupdocu {
-        font-size: 1.3em;
-        position: relative;
-        text-align: left;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #000542;
-        width: 700px;
-        padding: 20px;
-        margin: 10px;
-        border-spacing:10px;
-        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
 
-      }
+    .indivdocu .button-container a:hover {
+        background-color: #e6e600;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
 
+    /* Adjust font size if needed */
+    .indivdocu .button-container a {
+        font-size: 1em;
+    }
+
+        /* Group Documentation Styles */
+        .groupdocu h4 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .groupdocu p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .groupdocu a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .groupdocu a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
     <header>
         <h1><i>CRISIS RISES DOCUMENTATION</i></h1>
-        <h2> Here is where we come together and document our work for the Crisis Rises Game </h2>
-        <a href="layout.html">I want to go Back!</a>
+        <h2>Here is where we come together and document our work for the Crisis Rises Game</h2>
+        <a href="layout.html">Back to Layout</a>
+    </header>
 
-        <div class="groupdocu">
-            <br> 
-             <br>
-    <a href="picturesofprocess.html">Find the pictures of the game making process as well as game components here!</a>
-    <br>
-            <br>
-                         The game “Crisis Rises” was created to bring understanding and bring awareness to the threat of rising waters because of the climate crisis. The goal of the game is for the players – split into 8 teams each representing a different city agency, to collectively come to a solution to save the city. As the game cannot be won without seawalls in at least seven of the sixteen districts, it is extremely important for the players to discuss and come to a method to collaborate on a strategy. Furthermore, the addition of a timed component forces urgency in hastening the building of alliances in face of the ever-rising flood. 
-           <br>
-           <br>
-                 Throughout the game, we examine the edge condition bordering lower Manhattan and methods of flood mitigation to combat the climate crisis. Flood prevention is not only about responding to emergencies, despite what it may seem at the beginning of the game, but also by creating preventive measures. Players learn throughout the game that the preemptive creation of green infrastructure not only makes areas safer from flooding, it also prevents the loss of commercial and residential assets and therefore is more financially viable in the long term. Strategic planning of the city will also be needed to manage the flood via the appropriate distribution of flood infrastructure. Furthermore, on harder difficulties, decide while zones must be sacrificed, either permanently or temporarily, to buy time and space to save some of the other zones. We also hope the players will understand, via playing the game, the dynamics of power and between the city agencies and districts. 
-</div>
-
-            <div class="groupdocu">
-           <h4> Feedback from the playtesting on the game </h4>
-           <br>
-           <br>
-Thankfully, the playtesting has revealed that our game is fun! The short deadlines set by the timer made the game more difficult, and therefore forced us to make quick decisions and work towards building the most efficient wall possible so that we can win the game. 
-<br>
-<br>
-However, we could not help but wonder if there could be more tension between the players. Despite there being some personal motivations earlier in the game either through guilt of flooding another’s districts or the wish to protect the player’s own district, after losing the first district, everyone banded together to prevent the loss of further districts.An earlier playtest of the game involved more personal win states separate, and sometimes contrary from the collective goal. We had hoped that the personal win states could have led to more false alliances and backstabbing. Unfortunately, that did not make it to the final iteration of the game. Perhaps it is something that we can reincorporate into ‘Crisis Rises’ as we further develop it. 
-</div>
-
-<div class="groupdocu">
-    <h4> Something that we have learned from playing the game </h4>
-             <br>
-           <a href="picturesofplaytest.html">Find the pictures of the playtest here!</a>
-           <br>
-    <br>
-    Throughout playing the game, we learned the hard way that the time is extremely limited in an emergency, and we must get together as a team to solve the crisis as efficiently as possible so that we can save the maximum area of Manhattan. The best decisions are often made together, as each player as their own special abilities, whether that be codified within the game via the role cards or simply on how they can see the game– for example, some people might be very good at calculating the most efficient perimeter for the wall. It is when each person can feel capable of sharing their own skills and ideas that we can reach our goals as quickly as possible
-       </div>
-    <div class="indivdocu">
-        Personal Documentations
-            <p><a href="alexweb.html">Alex</a></p>
-            <p> <a href="yaya.html"> Yaya</a></p>
-            <a href="vickyweb.html">Vicky</a>
-            <p> <a href="lydia.html"> Lydia</a></p>
+    <div class="text-image-container">
+        <div class="text-column groupdocu rounded-rectangle">
+            <a href="picturesofprocess.html">View pictures of the game-making process and components here!</a>
+            <p><strong>The game “Crisis Rises” was created to bring understanding and raise awareness about the threat of rising waters due to the climate crisis.</strong> The goal of the game is for the players—split into 8 teams, each representing a different city agency—to collectively come to a solution to save the city. Since the game cannot be won without seawalls in at least seven of the sixteen districts, it is crucial for the players to discuss and collaborate on a strategy. The timed component adds urgency, compelling players to build alliances quickly in the face of the rising flood.</p>
+            <p><strong>Throughout the game, we explore the edge conditions bordering lower Manhattan and flood mitigation methods to address the climate crisis.</strong> Flood prevention involves not only responding to emergencies but also creating preventive measures. The preemptive creation of green infrastructure makes areas safer from flooding, prevents the loss of commercial and residential assets, and is more financially viable in the long term. Strategic city planning is needed to manage the flood through appropriate infrastructure distribution. On harder difficulties, players must decide which zones to sacrifice, either permanently or temporarily, to save others. We hope that playing the game helps players understand the dynamics of power between city agencies and districts.</p>
         </div>
+        <div class="image-column">
+            <img src="documentation images\crises rises.jpeg" alt="Game Process Image">
+        </div>
+    </div>
+
+    <div class="text-image-container">
+        <div class="text-column groupdocu rounded-rectangle">
+            <h4>Feedback from the Playtesting on the Game</h4>
+            <p><strong>Thankfully, the playtesting has revealed that our game is fun!</strong> The short deadlines imposed by the timer made the game more challenging, forcing us to make quick decisions and build the most efficient wall possible to win.</p>
+            <p><strong>However, we wondered if there could be more tension between players.</strong> Despite personal motivations early in the game, such as guilt from flooding other districts or the desire to protect one’s own district, players ultimately united to prevent further losses. Earlier playtests involved more personal win states, leading to false alliances and backstabbing. Unfortunately, this did not make it to the final iteration. It’s something we might reincorporate into ‘Crisis Rises’ as we further develop it.</p>
+        </div>
+        <div class="image-column">
+            <img src="documentation images\playtest.jpeg" alt="Playtest Feedback Image">
+        </div>
+    </div>
+
+    <div class="text-image-container">
+        <div class="text-column groupdocu rounded-rectangle">
+            <h4>Something That We Have Learned from Playing the Game</h4>
+            <a href="picturesofplaytest.html">Find the pictures of the playtest here!</a>
+            <p><strong>Throughout playing the game, we learned the hard way that time is extremely limited in an emergency,</strong> and we must work together as a team to solve the crisis as efficiently as possible to save the maximum area of Manhattan. The best decisions are often made collaboratively, as each player has unique abilities, whether codified within the game or based on personal skills. When each person shares their skills and ideas, we can achieve our goals more quickly.</p>
+        </div>
+        <div class="image-column">
+            <img src="documentation images\image 03.jpg" alt="Learning Image">
+        </div>
+    </div>
+
+    <div class="indivdocu rounded-rectangle">
+      <h3>Personal Documentations</h3>
+      <div class="button-container">
+          <a href="alexweb.html">Alex</a>
+          <a href="jishnu.html">Jishnu</a>
+          <a href="joshua.html">Joshua</a>
+          <a href="lydia.html">Lydia</a>
+          <a href="richa.html">Richa</a>
+          <a href="vickyweb.html">Vicky</a>
+          <a href="yaya.html">Yaya</a>
+      </div>
+  </div>
+</body>
+</html>
