@@ -20,19 +20,19 @@ document.getElementById('main-page').addEventListener('click', function() {
             ];
 
             const positions = [
-                { x: -950, y: -700 }, // Top-left
-                { x: -250, y: -700 },  // Top-right
-                { x: -950, y: -350 },  // Bottom-left
-                { x: -250, y: -350 },   // Bottom-right
-                { x: -605, y: -200 }      // Bottom-center
+                { x: -40, y: -20 }, // Top-left
+                { x: 40, y: -20 },  // Top-right
+                { x: -40, y: 20 },  // Bottom-left
+                { x: 40, y: 20 },   // Bottom-right
+                { x: 0, y: 40 }     // Bottom-center
             ];
 
             for (let i = 0; i < texts.length; i++) {
                 let smallPage = document.createElement('div');
                 smallPage.className = 'small-page';
-                smallPage.innerHTML = texts[i]; 
+                smallPage.innerHTML = texts[i];
 
-                smallPage.style.transform = `translate(${positions[i].x}px, ${positions[i].y}px)`;
+                smallPage.style.transform = `translate(${positions[i].x}vw, ${positions[i].y}vh)`;
 
                 container.appendChild(smallPage);
 

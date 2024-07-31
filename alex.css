@@ -62,8 +62,8 @@ a:hover {
 
 .flipper {
     position: relative;
-    width: 400px;
-    height: 100px;
+    width: 50vw;
+    height: 12vh;
     transition: 0.6s;
     transform-style: preserve-3d;
 }
@@ -100,8 +100,8 @@ a:hover {
 }
 
 .page {
-    width: 400px;
-    height: 100px;
+    width: 50vw;
+    height: 12vh;
     background-color: #FFD700;
     color: black;
     display: flex;
@@ -118,8 +118,8 @@ a:hover {
 }
 
 .small-page {
-    width: 300px;
-    height: 100px;
+    width: 40vw;
+    height: 10vh;
     background-color: #FFD700;
     color: black;
     display: flex;
@@ -136,10 +136,30 @@ a:hover {
 
 #container {
     position: relative;
-    width: 400px;
-    height: 100px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 12vh;
     display: none;
+}
+
+@media (max-width: 600px) {
+    .flip-container, .page, .small-page, #container {
+        width: 90vw;
+        height: 15vh;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 0.9em;
+    }
+
+    h3 {
+        font-size: 0.7em;
+    }
+
+    a {
+        font-size: 0.9em;
+    }
 }
