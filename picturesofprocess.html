@@ -5,93 +5,273 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crisis Rises Game Page</title>
     <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <style>
-        .indivdocu {
-        font-size: 1.5em;
-        position: relative;
- justify-content: center;
-        font-family: Montserrat;
-        color: #ffffff;
-        padding: 10px;
-        margin: 10px;
-        border-spacing:10px;
-        border-radius: 20px;
-        background-color: #000000;
-        font-weight: bold;
-      }
-      .groupdocu {
-        font-size: 1.3em;
-        position: relative;
-        text-align: left;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #000542;
-        width: 700px;
-        padding: 20px;
-        margin: 10px;
-        border-spacing:10px;
-        border-radius: 20px;
-      }
-      .imageandtext {
-        font-size: 1.2em;
-        font-family: Montserrat;
-        color: rgb(255, 250, 250);
-        padding: 10px;
-        margin: 30px;
-        border-spacing:10px;
-        border-radius: 20px;
-        background-color: #000000;
-      }
-
+        body {
+            font-family: Montserrat, sans-serif;
+            background-color: rgb(230, 300, 300);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header-container {
+            color: #000000;
+            padding: 20px;
+            margin: 0;
+        }
+        .header-container h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .header-container h2 {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+        .header-container p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            background-color: #000000;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: #444;
+        }
+        .carousel-container {
+            width: 80vh; /* 80% of viewport width */
+            height: 60vh; /* 40% of viewport height */
+            margin: 10px auto;
+            position: relative;
+            overflow: clip;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+        .carousel {
+            width: 100%;
+            height: 100%;
+        }
+        .slick-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensure images fit the container */
+            border-radius: 10px;
+        }
+        .slick-prev, .slick-next {
+            width: 40px;
+            height: 40px;
+            color: #ffffff;
+            background-color: #000000;
+            border-radius: 50%;
+            font-size: 44px;
+            line-height: 0px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+        .slick-prev {
+            left: 10px;
+        }
+        .slick-next {
+            right: 10px;
+        }
+        .slick-prev:before, .slick-next:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 40px;
+            text-align: center;
+            color: #000000;
+            font-size: 24px;
+        }
+        .slick-dots {
+            bottom: 10px;
+        }
+        .slick-dots li button:before {
+            font-size: 12px;
+            color: #000000;
+        }
+        .gallery-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .gallery-item {
+            flex: 1;
+            min-width: 300px;
+            max-width: 300px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            overflow: hidden;
+            text-align: center;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px; /* Fixed height for consistency */
+            object-fit: cover; /* Fit image to the frame while preserving aspect ratio */
+            border-bottom: 3px solid #000;
+        }
+        .gallery-caption {
+            color: #333333;
+            padding: 10px;
+            font-size: 1em;
+            background-color: #f9f9f9;
+        }
     </style>
 </head>
 <body>
-    <header>
+    <div class="header-container">
         <h1><i>CRISIS RISES MATERIALS</i></h1>
-        <h2> Documentation of the Process and the Components for Crisis Rises </h2>
-        <a href="gamedocumentation.html">I want to go Back!</a>
-        <br>
-        <br>
-        <br>
-
-        <div class="images">
-            <img src="finalcomponentandprocessimg/finalsetupscreenshot.jpg" />    
-    </div>
-    <div class="imageandtext">
-        Website Layout
+        <h2>Documentation of the Process and the Components for Crisis Rises</h2>
+        <p>This page showcases the development process and final components of the Crisis Rises game. Explore how the game evolved and view the final materials.</p>
+        <a href="gamedocumentation.html" class="back-link">I want to go Back!</a>
     </div>
 
-            <div class="images">
-                <img src="finalcomponentandprocessimg/DSCF0836-2.jpg" />    
+    <div class="carousel-container">
+        <div class="carousel">
+            <div><img src="finalcomponentandprocessimg\01.jpg" alt="All the Printed Materials"></div>
+            <div><img src="finalcomponentandprocessimg\02.jpg" alt="Rulebook Front"></div>
+            <div><img src="finalcomponentandprocessimg\03.jpg" alt="Rulebook Back"></div>
+            <div><img src="finalcomponentandprocessimg\04.jpg" alt="Personal Setup"></div>
+            <div><img src="finalcomponentandprocessimg\05.jpg" alt="Website Layout"></div>
+            <div><img src="finalcomponentandprocessimg\06.jpg" alt="Setting up the board"></div>
+            <div><img src="finalcomponentandprocessimg\07.jpg" alt="Let's' Play"></div>
+            <div><img src="finalcomponentandprocessimg\08.jpeg" alt="Setting the ground base: Playing Pandemic"></div>
+            <div><img src="finalcomponentandprocessimg\09.jpeg" alt="Role Playing with Max Lerner"></div>
+            <div><img src="finalcomponentandprocessimg\10.jpeg" alt="Prototyping it good"></div>
+            <div><img src="finalcomponentandprocessimg\11.jpeg" alt="Camera can see: April Tags"></div>
+            <div><img src="finalcomponentandprocessimg\12.jpg" alt="Play-testing"></div>
+            <div><img src="finalcomponentandprocessimg\13.jpg" alt="Manhattan pixelated grid"></div>
+            <div><img src="finalcomponentandprocessimg\14.jpg" alt="Play-testing - Lay it all out"></div>
+            <div><img src="finalcomponentandprocessimg\15.jpeg" alt="Let the role cards be designed"></div>
+            <div><img src="finalcomponentandprocessimg\16.jpg" alt="Set the board - Again"></div>
+            <div><img src="finalcomponentandprocessimg\17.jpg" alt="Play shouldn't stop"></div>
+            <div><img src="finalcomponentandprocessimg\18.jpeg" alt="IT'S COMING TOGETHER!!!"></div>
+            <div><img src="finalcomponentandprocessimg\19.jpg" alt="Fine tuning Mechanics"></div>
+            <div><img src="finalcomponentandprocessimg\20.jpg" alt="The final setup"></div>
+            <div><img src="finalcomponentandprocessimg\21.jpg" alt="The final play"></div>
+
         </div>
-        <div class="imageandtext">
-            All the Printed Materials 
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\01.jpg" alt="All the components">
+            <div class="gallery-caption">All the components</div>
         </div>
-
-        <div class="images">
-            <img src="finalcomponentandprocessimg/DSCF0822-2.jpg" />    
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\02.jpg" alt="Rulebook Front">
+            <div class="gallery-caption">Rulebook Front</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\03.jpg" alt="Rulebook Back">
+            <div class="gallery-caption">Rulebook Back</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\04.jpg" alt="Personal Setup">
+            <div class="gallery-caption">Personal Setup</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\05.jpg" alt="Website Layout">
+            <div class="gallery-caption">Website Layout</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\06.jpg" alt="Setting up the game board">
+            <div class="gallery-caption">Setting up the game board</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\07.jpg" alt="Play in progress">
+            <div class="gallery-caption">Play in progress</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\08.jpeg" alt="Setting the ground base: Playing Pandemic">
+            <div class="gallery-caption">Setting the ground base: Playing Pandemic</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\09.jpeg" alt="Role Playing with Max Lerner">
+            <div class="gallery-caption">Role Playing with Max Lerner</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\10.jpeg" alt="Prototyping it good">
+            <div class="gallery-caption">Prototyping it good</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\11.jpeg" alt="Camera can see: April Tags">
+            <div class="gallery-caption">Camera can see: April Tags</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\12.jpg" alt="Play-testing">
+            <div class="gallery-caption">Play-testing</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\13.jpg" alt="Manhattan pixelated grid">
+            <div class="gallery-caption">Manhattan pixelated grid</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\14.jpg" alt="Play-testing - Lay it all out">
+            <div class="gallery-caption">Play-testing - Lay it all out</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\15.jpeg" alt="Let the role cards be designed">
+            <div class="gallery-caption">Let the role cards be designed</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\16.jpg" alt="Set the board - Again">
+            <div class="gallery-caption">Set the board - Again</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\17.jpg" alt="Play shouldn't stop">
+            <div class="gallery-caption">Play shouldn't stop</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\18.jpeg" alt="IT'S COMING TOGETHER!!!">
+            <div class="gallery-caption">IT'S COMING TOGETHER!!!</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\19.jpg" alt="Fine tuning Mechanics">
+            <div class="gallery-caption">Fine tuning Mechanics</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\20.jpg" alt="The final setup">
+            <div class="gallery-caption">The final setup</div>
+        </div>
+        <div class="gallery-item">
+            <img src="finalcomponentandprocessimg\21.jpg" alt="The final play">
+            <div class="gallery-caption">The final play</div>
+        </div>
     </div>
-    <div class="imageandtext">
-        Rulebook Front
-    </div>
 
-    <div class="images">
-        <img src="finalcomponentandprocessimg/DSCF0843-2.jpg"/>    
-</div>
-<div class="imageandtext">
-    Rulebook Back
-</div>
-
-<div class="images">
-    <img src="finalcomponentandprocessimg/DSCF0831-2.jpg" />    
-</div>
-<div class="imageandtext">
-Personal setup
-</div>
-
-<div class="images">
-    <img src="finalcomponentandprocessimg/imageda.jpg" />    
-</div>
-<div class="imageandtext">
-All the Components together
-</div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<button type="button" class="slick-prev">‹</button>',
+                nextArrow: '<button type="button" class="slick-next">›</button>',
+            });
+        });
+    </script>
+</body>
+</html>

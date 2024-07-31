@@ -1,37 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crisis Rises Game Page</title>
-    <link rel="stylesheet" href="layout.css">
-    <style>
-        .indivdocu {
-        font-size: 1.5em;
-        position: relative;
- justify-content: center;
-        font-family: Montserrat;
-        color: #ffffff;
-        padding: 10px;
-        margin: 10px;
-        border-spacing:10px;
-        border-radius: 20px;
-        background-color: #000000;
-        font-weight: bold;
-      }
-      .groupdocu {
-        font-size: 1.3em;
-        position: relative;
-        text-align: left;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #000542;
-        width: 700px;
-        padding: 20px;
-        margin: 10px;
-        border-spacing:10px;
-        border-radius: 20px;
-
-      }
-
-    </style>
+    <title>Crisis Rises Rule Book</title>
+    <link href="howtoplay.css" rel="stylesheet" />
 </head>
+<body>
+    <header>
+        <h1>Crisis Rises Rule Book</h1>
+    </header>
+    <div id="main-container">
+        <section class="overview">
+            <h2>Game Overview</h2>
+            <p>New York City is on the verge of a climate crisis, with rising sea levels threatening its very existence. In "Crisis Rises," players take on the roles of leaders from various city agencies, each tasked with addressing specific aspects of the city's resilience and preparedness. These agencies must work together to implement strategies to protect the city against imminent threats.</p>
+            <p>Can you, the leaders of agencies, build enough resilience to save the city from drowning in due time?</p>
+            <a href="layout.html" class="play-button">Let's Play</a>
+        </section>
+        <section class="rules">
+            <div class="rule-section">
+                <h2>Card Decks and Components</h2>
+                <ul>
+                    <li>Board: Game board in 4 pieces to play on</li>
+                    <li>Cubes: Four colors (yellow, red, blue, green) representing different city elements (services and infrastructure), two colors (purple and orange) for playing mini-games</li>
+                    <li>Wall: 80 pieces for building walls</li>
+                    <li>Key Map: Pixelated map of Lower Manhattan divided into 16 sections labeled 1-16 with 4 rings of Flooding labeled A-D (for player’s reference)</li>
+                    <li>Token: Game currency</li>
+                    <li>Zone Card: 16 Cards describing neighborhoods (9 shore neighborhoods + 7 inland neighborhoods)</li>
+                    <li>Flood Deck: 40 cards, including number cards, scenario cards, and challenge cards</li>
+                    <li>Role Deck: 8 cards, each representing a city agency</li>
+                    <li>Scenario Cards: 16 April Tags mentioning scenarios</li>
+                    <li>Sewer Turtle Cards: 12 Cards mentioning charades</li>
+                    <li>Federal Inspection Cards: 36 April Tags for Trivia</li>
+                    <li>Tornado Cards: Mini game card</li>
+                    <li>Dice: D4 & D6</li>
+                    <li>Timer: For tracking game time</li>
+                    <li>Camera & Screen: For scanning April Tags</li>
+                </ul>
+            </div>
+            <div class="rule-section">
+                <h2>Board Set Up Instructions</h2>
+                <p>Lay out the game board by putting together its four pieces.</p>
+                <p>Each player draws one zone card from the inland deck and one from the shore deck (In an 8 player game, one player will have to pick the remaining two cards from the shore deck).</p>
+                <p>Each player draws a role card and receives 5 tokens.</p>
+                <p>Each player sets up their neighborhood according to the zone card, placing cubes as they wish.</p>
+                <p>Begin with the Urban Designer as the first player.</p>
+            </div>
+            <div class="rule-section">
+                <h2>Gameplay: Win and Lose Conditions</h2>
+                <h3>Win Conditions</h3>
+                <p>Stop all flooding collectively. Build a continuous wall to save at least 7 neighborhoods.</p>
+                <h3>Lose Condition</h3>
+                <p>Lose more than 9 neighborhoods. No revenue is being generated if there is no more housing or commercial on Manhattan.</p>
+            </div>
+            <div class="rule-section">
+                <h2>Difficulty Level</h2>
+                <ul>
+                    <li>Easy: Draw 2 cards every 4 minutes from the Flood Deck</li>
+                    <li>Normal: Draw 2 cards every 3 minutes from the Flood Deck</li>
+                    <li>Hard: Draw 2 cards every 2 minutes from the Flood Deck</li>
+                    <li>Tsunami: Draw 2 cards every 1 minute from the Flood Deck</li>
+                </ul>
+            </div>
+            <div class="rule-section">
+                <h2>Cube Colors</h2>
+                <ul>
+                    <li>Blue: Emergency Services</li>
+                    <li>Green: Green Infrastructure</li>
+                    <li>Yellow: Housing</li>
+                    <li>Red: Commercial</li>
+                    <li>Purple & Orange: Mini-games</li>
+                </ul>
+            </div>
+            <div class="rule-section">
+                <h2>Token Values</h2>
+                <ul>
+                    <li>2 Tokens: Green Infrastructure, Emergency Services</li>
+                    <li>3 Tokens: Walls</li>
+                    <li>4 Tokens: Housing, Commercial</li>
+                </ul>
+            </div>
+            <div class="rule-section">
+                <h2>Gameplay Action | How to Play</h2>
+                <ul>
+                    <li>Set the timer: Choose your difficulty level and set the timer. The Urban Designer starts.</li>
+                    <li>Draw from the Flood Deck: Follow instructions based on card type (number, scenario, challenge).</li>
+                    <li>Roll a dice for flooding: Determine if a zone floods and handle the flooding accordingly.</li>
+                    <li>Player Actions: Each player has 2 actions per turn. Actions include building, demolishing, or swapping elements.</li>
+                    <li>When the timer runs out: Stop current action, draw a card from the Flood Deck, and reset the timer.</li>
+                    <li>End of Round: Collect new tokens based on housing and commercial units.</li>
+                </ul>
+            </div>
+            <div class="rule-section">
+                <h2>How to get Tokens</h2>
+                <p>The central location for all tokens not held by players. Collect 2 tokens from the Token Bank as city grants budget and 1 token per commercial unit in your zones at the end of each round.</p>
+            </div>
+            <div class="rule-section">
+                <h2>Element Functions</h2>
+                <ul>
+                    <li>Green Infrastructure (G.I.): Absorbs water and protects against flooding.</li>
+                    <li>Emergency Services: Reclaims flooded land and allows rebuilding.</li>
+                    <li>Wall: Stops water and requires G.I. to build.</li>
+                    <li>Housing: Provides shelter for the population.</li>
+                    <li>Commercial: Generates revenue and requires housing to build.</li>
+                </ul>
+            </div>
+            <div class="rule-section">
+                <h2>Role Cards</h2>
+                <ul>
+                    <li>Parks Department: Builds G.I. and walls, can build one free park per turn.</li>
+                    <li>Private Developer: Builds housing, commercial, and walls; collects tokens twice.</li>
+                    <li>Construction Team: Builds anything, housing, and commercial at half price.</li>
+                    <li>Urban Designer: Builds anything, G.I., and emergency services at half price.</li>
+                    <li>EDC: Builds walls, gives up to 5 tokens to any player as an action.</li>
+                    <li>Department of Sanitation: Builds public services and walls; can swap flooded zones.</li>
+                    <li>Department of City Planning: Can build anything; gives actions to other players.</li>
+                    <li>NIMBY Alliance: Builds only G.I. and walls; can veto actions.</li>
+                    <li>MOCEJ: Builds G.I., emergency services, and walls; can ask players to build.</li>
+                </ul>
+            </div>
+            <div class="rule-section">
+                <h2>Challenge & Scenario Cards</h2>
+                <ul>
+                    <li>Sewer Turtles: Act out charades to prevent future floods.</li>
+                    <li>Federal Funding Investigation: Answer trivia questions to gain walls or return tokens.</li>
+                    <li>Tornado: Stack residential blocks; success gains tokens, failure removes blocks.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
