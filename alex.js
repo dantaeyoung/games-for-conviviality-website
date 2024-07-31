@@ -20,11 +20,11 @@ document.getElementById('main-page').addEventListener('click', function() {
             ];
 
             const positions = [
-                { x: -40, y: -20 }, // Top-left
+                { x: -20, y: -20 }, // Top-left
                 { x: 40, y: -20 },  // Top-right
-                { x: -40, y: 20 },  // Bottom-left
-                { x: 40, y: 20 },   // Bottom-right
-                { x: 0, y: 40 }     // Bottom-center
+                { x: -20, y: 10 },  // Bottom-left
+                { x: 40, y: 10 },   // Bottom-right
+                { x: 9, y: 5 }     // Bottom-center
             ];
 
             for (let i = 0; i < texts.length; i++) {
